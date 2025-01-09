@@ -6,20 +6,20 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:31 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/09 13:31:03 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/09 15:48:36 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() {
+PhoneBook::PhoneBook() : size(0) {
 }
 
 PhoneBook::~PhoneBook() {
 }
 
-int is_phone_number(const std::string number) {
+int is_phone_number(const std::string &number) {
 	if (number[0] == '+'){
 		for (size_t i = 1; i < number.size(); ++i) {
 			if (!isdigit(number[i]))
@@ -66,16 +66,23 @@ std::string	getData(const std::string &message, int number) {
 }
 
 void	PhoneBook::addContacts(void) {
-	Contact contact(	getData("Enter the first name: ", 0),
-						getData("Enter the last name: ", 0),
-						getData("Enter the nickname: ", 0),
-						getData("Enter the phone number: ", 1),
-						getData("Enter the darkest secret: ", 0));
+	std::string firstName = getData("Enter the first name: ", 0);
+	std::string lastName = getData("Enter the last name: ", 0);
+	std::string nickname = getData("Enter the nickname: ", 0);
+	std::string phoneNumber = getData("Enter the phone number: ", 1);
+	std::string darkestSecret = getData("Enter the darkest secret: ", 0);
 
+	Contact contact(firstName, lastName, nickname, phoneNumber, darkestSecret);
+	
 	static int i = 0;
-	i %= 8;
 	this->_contacts[i] = contact;
 	i++;
+	if (i < 8) {
+		this->size = i;
+	} else {
+		this->size = 8;
+		i = 0;
+	}
 }
 
 void	PhoneBook::displayContacts(void) const {
@@ -84,12 +91,16 @@ void	PhoneBook::displayContacts(void) const {
 	std::cout << std::setw(10) << "Last Name" << "|";
 	std::cout << std::setw(10) << "Nickname" << "|";
 	std::cout << std::endl;
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < this->size; i++) {
 		this->_contacts[i].displayShort(i);
 	}
 }
 
 void	PhoneBook::searchContacts(void) const {
+	if (this->size < 1) {
+		std::cout << "No contacts saved." << std::endl;
+		return;
+	}
 	this->displayContacts();
 
 	std::string index;
@@ -99,14 +110,15 @@ void	PhoneBook::searchContacts(void) const {
 		std::getline(std::cin, index);
 	}
 	do {
-		if (index.empty() || index.size() != 1 || index[0] < '1' || index[0] > '8') {
+		if (!std::cin.eof() && (index.size() != 1 || index[0] < '1' || index[0] > '8')) {
 			std::cout << "Invalid index. Please enter again (1 - 8):  " << std::endl;
 			std::getline(std::cin, index);
 		} else {
 			break;
 		}
 	} while (!std::cin.eof());
-
-	int i = index[0] - '0' - 1;
-	this->_contacts[i].displayFull();
+	if (!std::cin.eof()) {
+		int i = index[0] - '0' - 1;
+		this->_contacts[i].displayFull();
+	}
 }

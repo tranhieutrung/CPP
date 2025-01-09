@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 10:01:09 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/09 10:40:13 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/09 15:29:07 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class PhoneBook
 
 	private:
 		Contact	_contacts[8];
+		int		size;
 };
 
 #endif
