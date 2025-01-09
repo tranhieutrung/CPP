@@ -1,21 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/09 10:01:09 by hitran            #+#    #+#             */
+/*   Updated: 2025/01/09 10:40:13 by hitran           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+# include "Contact.hpp"
+
 class PhoneBook
 {
-private:
-	/* data */
-public:
-	PhoneBook(/* args */);
-	~PhoneBook();
+	public:
+		// Constructor
+		PhoneBook();
+
+		// Methods
+		void addContacts(void);
+		void searchContacts(void) const;
+		void displayContacts(void) const;
+
+		// Destructor
+		~PhoneBook();
+
+	private:
+		Contact	_contacts[8];
 };
-
-PhoneBook::PhoneBook(/* args */)
-{
-}
-
-PhoneBook::~PhoneBook()
-{
-}
 
 #endif
