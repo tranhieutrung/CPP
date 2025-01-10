@@ -6,14 +6,14 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:31 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/10 15:51:54 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/10 16:23:31 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : size(0) {
+PhoneBook::PhoneBook() : _size(0) {
 }
 
 PhoneBook::~PhoneBook() {
@@ -85,8 +85,8 @@ void	PhoneBook::addContacts(void) {
 	static int i = 0;
 	this->_contacts[i] = contact;
 	i = (i + 1) % 8;
-	if (this->size < 8) {
-    	this->size++;
+	if (this->_size < 8) {
+    	this->_size++;
 	}
 }
 
@@ -96,13 +96,13 @@ void	PhoneBook::displayContacts(void) const {
 	std::cout << std::setw(10) << "Last Name" << "|";
 	std::cout << std::setw(10) << "Nickname" << "|";
 	std::cout << std::endl;
-	for (int i = 0; i < this->size; i++) {
+	for (int i = 0; i < this->_size; i++) {
 		this->_contacts[i].displayShort(i);
 	}
 }
 
 void	PhoneBook::searchContacts(void) const {
-	if (this->size < 1) {
+	if (this->_size < 1) {
 		std::cout << "No contacts saved." << std::endl;
 		return;
 	}
@@ -117,7 +117,7 @@ void	PhoneBook::searchContacts(void) const {
 		if (!std::cin.eof() && (index.size() != 1 || index[0] < '1' || index[0] > '8')) {
 			std::cout << "Invalid index. Please enter again:  " << std::endl;
 			std::getline(std::cin, index);
-		} else if (index[0] > this->size + '0') {		
+		} else if (index[0] > this->_size + '0') {		
 			std::cout << "Contact not found. Please enter again:  " << std::endl;
 			std::getline(std::cin, index);
 		} else {
