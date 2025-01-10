@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:54:40 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/09 13:30:03 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/10 15:51:37 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ std::string  truncateString(const std::string &data) {
 }
 
 void Contact::displayShort(int index) const {
-	std::cout << std::setw(10) << index + 1 << "|";
+	std::cout << std::setw(10) << index + 1 << "|"; 
 	std::cout << std::setw(10) << truncateString(this->_first_name) << "|";
 	std::cout << std::setw(10) << truncateString(this->_last_name) << "|";
 	std::cout << std::setw(10) << truncateString(this->_nickname) << "|";

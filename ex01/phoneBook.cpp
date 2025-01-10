@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:31 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/10 11:50:12 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/10 15:51:54 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,27 @@ PhoneBook::PhoneBook() : size(0) {
 PhoneBook::~PhoneBook() {
 }
 
-int is_phone_number(const std::string &number) {
-	if (number[0] == '+'){
-		for (size_t i = 1; i < number.size(); ++i) {
-			if (!isdigit(number[i]))
-				return 0;
-		}
-	} else {
-		for (size_t i = 0; i < number.size(); ++i) {
-			if (!isdigit(number[i]))
-				return 0;
-		}
+int is_phone_number(const std::string &data) {
+	if (data.empty())
+		return 0;
+	
+	std::string numberString = data;
+	if (numberString[0] == '+'){
+		numberString = numberString.substr(1);
+	}
+	for (char c : numberString) {
+		if (!isdigit(c))
+			return 0;
 	}
 	return 1;
 }
 
-int is_all_space(const std::string& str) {
-	for (size_t i = 0; i < str.size(); ++i) {
-		if (str[i] != ' ') {
+int is_all_space(const std::string& data) {
+	if (data.empty())
+		return 1;
+		
+	for (char c: data) {
+		if (!isspace(c)) {
 			return 0;
 		}
 	}
@@ -50,16 +53,21 @@ std::string	getData(const std::string &message, int number) {
 		std::cout << message << std::endl;
 		std::getline(std::cin, data);
 	}
-	if (number == 1) {
-		while (!std::cin.eof() && (data.empty() || !is_phone_number(data))) {
+	switch (number)
+	{
+	case 1:
+		while (!std::cin.eof() && !is_phone_number(data)) {
 			std::cout << "Invalid input. Please enter again: " << std::endl;
 			std::getline(std::cin, data);
 		}
-	} else {
-		while (!std::cin.eof() && (data.empty() || is_all_space(data))) {
+		break;
+	
+	default:
+		while (!std::cin.eof() && is_all_space(data)) {
 			std::cout << "Invalid input. Please enter again: " << std::endl;
 			std::getline(std::cin, data);
 		}
+		break;
 	}
 	
 	return (data);
@@ -83,7 +91,7 @@ void	PhoneBook::addContacts(void) {
 }
 
 void	PhoneBook::displayContacts(void) const {
-	std::cout << std::setw(10) << "Index" << "|";
+	std::cout << std::setw(10) << "Index" << "|"; //no need << std::right
 	std::cout << std::setw(10) << "First Name" << "|";
 	std::cout << std::setw(10) << "Last Name" << "|";
 	std::cout << std::setw(10) << "Nickname" << "|";
