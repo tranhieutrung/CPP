@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:31 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/09 15:48:36 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/10 11:50:12 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,9 @@ void	PhoneBook::addContacts(void) {
 	
 	static int i = 0;
 	this->_contacts[i] = contact;
-	i++;
-	if (i < 8) {
-		this->size = i;
-	} else {
-		this->size = 8;
-		i = 0;
+	i = (i + 1) % 8;
+	if (this->size < 8) {
+    	this->size++;
 	}
 }
 
@@ -102,7 +99,6 @@ void	PhoneBook::searchContacts(void) const {
 		return;
 	}
 	this->displayContacts();
-
 	std::string index;
 
 	if (!std::cin.eof()) {
@@ -111,7 +107,10 @@ void	PhoneBook::searchContacts(void) const {
 	}
 	do {
 		if (!std::cin.eof() && (index.size() != 1 || index[0] < '1' || index[0] > '8')) {
-			std::cout << "Invalid index. Please enter again (1 - 8):  " << std::endl;
+			std::cout << "Invalid index. Please enter again:  " << std::endl;
+			std::getline(std::cin, index);
+		} else if (index[0] > this->size + '0') {		
+			std::cout << "Contact not found. Please enter again:  " << std::endl;
 			std::getline(std::cin, index);
 		} else {
 			break;

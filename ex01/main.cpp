@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:54:40 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/09 13:15:41 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/10 11:37:55 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
 		else if (command == "EXIT")
 			break ;
 		else if (!std::cin.eof())
-			std::cout << "The program only accepts ADD, SEARCH or EXIT. ";
+			std::cout << "The program only accepts ADD, SEARCH or EXIT. " << std::endl;
 	}
 	return 0;
 }
