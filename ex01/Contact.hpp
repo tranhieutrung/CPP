@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/10 20:49:09 by hitran            #+#    #+#             */
+/*   Updated: 2025/01/10 20:49:11 by hitran           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# include <iostream>
-# include <iomanip>
-# include <string>
+# include <iostream>	// cin, cout
+# include <iomanip>		// setw
+# include <string>		
 
 class Contact
 {
