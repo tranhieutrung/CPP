@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:31 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/10 20:52:17 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/10 21:12:37 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,9 @@ void	PhoneBook::addContacts(void) {
 	i = (i + 1) % 8;
 	if (this->_size < 8) {
     	this->_size++;
+	}
+	if (!std::cin.eof()) {
+		std::cout << "Added the new contact successfully." << std::endl;
 	}
 }
 
