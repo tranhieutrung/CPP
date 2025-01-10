@@ -6,13 +6,13 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 16:31:51 by hitran            #+#    #+#              #
-#    Updated: 2025/01/10 16:34:04 by hitran           ###   ########.fr        #
+#    Updated: 2025/01/10 21:47:18 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= account
 
-SRCS 			= test.cpp	Account.cpp
+SRCS 			= tests.cpp	Account.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
