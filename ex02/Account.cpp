@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 16:24:15 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/10 22:25:20 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/11 11:38:35 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ Account::Account(int initial_deposit) : _amount(initial_deposit) {
 	Account::_totalAmount += initial_deposit;
 
 	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";";
-	std::cout << "amount:" << this->_amount << ";";
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "amount:" << _amount << ";";
 	std::cout << "created" << std::endl;
 }
 
@@ -56,8 +56,8 @@ Account::~Account() {
 	Account::_nbAccounts--;
 
 	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";";
-	std::cout << "amount:" << this->_amount << ";";
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "amount:" << _amount << ";";
 	std::cout << "closed" << std::endl;
 }
 
@@ -94,11 +94,11 @@ void Account::makeDeposit(int deposit) {
 
 	_amount += deposit;
 	Account::_totalAmount += deposit;
-	std::cout << "amount:" << this->_amount << ";";
+	std::cout << "amount:" << _amount << ";";
 
 	_nbDeposits++;
 	Account::_totalNbDeposits++;
-	std::cout << "nb_deposits:" << this->_nbDeposits;
+	std::cout << "nb_deposits:" << _nbDeposits;
 	std::cout << std::endl;
 }
 
