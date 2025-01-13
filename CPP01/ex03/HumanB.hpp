@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:40:28 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/13 14:09:11 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/13 14:29:52 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class HumanB
 		void attack();
 
 	private:
-		Weapon &_weapon;
+		const Weapon *_weapon;
 		std::string _name;
 };

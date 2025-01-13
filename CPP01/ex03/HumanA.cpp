@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   humanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 13:40:23 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/13 14:14:50 by hitran           ###   ########.fr       */
+/*   Created: 2025/01/13 14:13:18 by hitran            #+#    #+#             */
+/*   Updated: 2025/01/13 14:20:35 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-# include <string>
-# include <iostream>
+#include "HumanA.hpp"
 
-class Weapon
-{
-	public:
-		Weapon(const std::string &type);
-		~Weapon();
-		
-		const std::string &getType() const;
-		void setType(const std::string type);
+HumanA::HumanA(const std::string &name, Weapon &weapon): _name(name), _weapon(weapon) {
+}
 
-	private:
-		std::string _type;
-};
+HumanA::~HumanA() {
+}
+
+void HumanA::attack() {
+	std::cout << this->_name << "  attacks with their " << this->_weapon.getType() << std::endl;
+}
