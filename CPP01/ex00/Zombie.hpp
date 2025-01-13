@@ -6,12 +6,11 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:55:59 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/11 14:59:00 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/13 10:54:40 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#pragma once
 
 # include <iostream>
 # include <string>
@@ -30,5 +29,3 @@ class Zombie
 
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
-
-#endif
