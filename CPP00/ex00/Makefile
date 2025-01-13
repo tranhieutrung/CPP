@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/08 14:01:21 by hitran            #+#    #+#              #
-#    Updated: 2025/01/09 11:34:48 by hitran           ###   ########.fr        #
+#    Created: 2025/01/08 14:01:28 by hitran            #+#    #+#              #
+#    Updated: 2025/01/13 08:51:19 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= phonebook
+NAME 			= megaphone
 
-SRCS 			= main.cpp	phoneBook.cpp	contact.cpp
+SRCS 			= megaphone.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -20,7 +20,7 @@ RM				= rm -rf
 
 # Compiler and flags
 CC 				= g++
-CFLAGS 			= -Wall -Wextra -Werror -std=c++20 -I .
+CFLAGS 			= -Wall -Wextra -Werror -std=c++20
 
 # Targets
 all: $(NAME)
@@ -36,4 +36,4 @@ fclean: clean
 	
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

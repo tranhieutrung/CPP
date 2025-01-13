@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/10 16:31:51 by hitran            #+#    #+#              #
-#    Updated: 2025/01/10 21:47:18 by hitran           ###   ########.fr        #
+#    Created: 2025/01/08 14:01:21 by hitran            #+#    #+#              #
+#    Updated: 2025/01/13 08:51:22 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= account
+NAME 			= phonebook
 
-SRCS 			= tests.cpp	Account.cpp
+SRCS 			= main.cpp	phoneBook.cpp	contact.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -36,4 +36,4 @@ fclean: clean
 	
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
