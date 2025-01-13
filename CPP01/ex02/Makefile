@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/11 14:52:47 by hitran            #+#    #+#              #
-#    Updated: 2025/01/13 13:34:10 by hitran           ###   ########.fr        #
+#    Created: 2025/01/13 13:24:56 by hitran            #+#    #+#              #
+#    Updated: 2025/01/13 13:34:02 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Zombie
+NAME 			= address
 
-SRCS 			= main.cpp	Zombie.cpp	newZombie.cpp	randomChump.cpp
+SRCS 			= main.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 

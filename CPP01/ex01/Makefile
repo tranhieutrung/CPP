@@ -6,7 +6,7 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/11 14:52:47 by hitran            #+#    #+#              #
-#    Updated: 2025/01/13 13:17:52 by hitran           ###   ########.fr        #
+#    Updated: 2025/01/13 13:34:06 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,4 +36,4 @@ fclean: clean
 	
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
