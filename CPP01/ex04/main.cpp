@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/14 12:35:27 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/14 14:46:51 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void checkEmptyArgs(
 std::string readFile(const std::string& infile) {
 	std::ifstream ifs(infile);
 	if (!ifs) {
-		handleError("Invalid input file: " + infile);
+		handleError(infile + ": Invalid input file.");
 	}
 
 	std::string content, line;
@@ -52,7 +52,7 @@ std::string readFile(const std::string& infile) {
 void writeFile(const std::string& outfile, const std::string& data) {
 	std::ofstream ofs(outfile.c_str());
 	if (!ofs) {
-		handleError("Invalid output file: " + outfile);
+		handleError(outfile + ": Invalid output file.");
 	}
 	ofs << data;
 	ofs.close();
