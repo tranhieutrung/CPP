@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:41:50 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/14 13:36:49 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/14 14:05:54 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void Harl::complain( std::string level ) {
 	switch (index)
 	{
 	case -1:
-		std::cout << "Invalid complaint level!" << std::endl;
+		std::cout << INVALID << std::endl;
 		break;
 	
 	default:

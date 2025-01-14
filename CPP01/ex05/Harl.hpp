@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:41:50 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/14 13:38:49 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/14 14:05:49 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define INFO "I cannot believe adding extra bacon costs more money."
 # define WARNING "I think I deserve to have some extra bacon for free."
 # define ERROR "This is unacceptable! I want to speak to the manager now."
+# define INVALID "Invalid complaint level!"
 
 class Harl
 {
