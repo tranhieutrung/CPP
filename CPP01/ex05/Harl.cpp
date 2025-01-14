@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:41:50 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/14 12:51:40 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/14 13:36:49 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,24 @@ Harl::~Harl() {
 }
 
 void Harl::complain( std::string level ) {
+	void (Harl::*complaints[4]) (void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
+	int index = -1;
+	for (int i = 0; i < 4; i++) {
+		index = (level == levels[i]) ? i : index;
+	}
+	switch (index)
+	{
+	case -1:
+		std::cout << "Invalid complaint level!" << std::endl;
+		break;
+	
+	default:
+		(this->*complaints[index])();
+		break;
+	}
+	
 }
 
 void Harl::debug( void ) {
