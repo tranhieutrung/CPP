@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/13 22:26:39 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/14 12:29:31 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,62 @@
 
 void handleError(const std::string message) {
 	std::cerr << "Error: " << message << std::endl;
-	exit (1);
+	exit (EXIT_FAILURE);
 }
 
-int main(int ac, char **av) {
+void checkNumberArgs(int ac) {
 	if (ac != 4 ) {
 		handleError("Invalid number of arguments!");
 	}
-	std::string fileName = av[0];
-	std::string s1 = av[1];
-	std::string s2 = av[2];
+}
 
-	if (fileName.empty() || s1.empty() || s2.empty()) {
+void checkEmptyArgs(
+					const std::string &infile,
+					const std::string  &s1,
+					const std::string  &s2) {
+	if (infile.empty() || s1.empty() || s2.empty()) {
 		handleError("Empty arguments!");
 	}
-	std::ifstream ifs(fileName);
-	if (!ifs) {
-		handleError("Invalid input file!");
-	}
+}
 
-	std::string fileData;
-	std::string	replacedData;
+std::string readFile(const std::string& infile) {
+    std::ifstream ifs(infile);
+    if (!ifs) {
+        handleError("Invalid input file: " + infile);
+    }
 
-	while (std::getline(ifs, fileData)) {
-		replacedData += Replace::replace(fileData, s1, s2);
-		if (ifs.eof())
-			replacedData += "\n";
-	}
+    std::string content, line;
+    while (std::getline(ifs, line)) {
+        content += line;
+        if (!ifs.eof()) {
+            content += "\n";
+        }
+    }
+    ifs.close();
+    return content;
+}
 
-	ifs.close();
+void writeFile(const std::string& outfile, const std::string& data) {
+    std::ofstream ofs(outfile.c_str());
+    if (!ofs) {
+        handleError("Invalid output file: " + outfile);
+    }
+    ofs << data;
+    ofs.close();
+}
+
+int main(int ac, char **av) {
+	checkNumberArgs(ac);
+
+	std::string infile = av[1];
+	std::string s1 = av[2];
+	std::string s2 = av[3];
+
+	checkEmptyArgs(infile, s1, s2);
 	
-	std::string outfile = std::string(av[1]) + ".replace";
-	std::ofstream ofs(outfile.c_str());
-	if (!ofs) {
-		handleError("Invalid Output File!");
-	}
-	ofs << replacedData;
-	ofs.close();
+	std::string inputData = readFile(infile);
+	std::string replacedData = Replace::replace(inputData, s1, s2);
+	writeFile(infile + ".replace", replacedData);
 
-	return (0);
+	return (EXIT_SUCCESS);
 }
