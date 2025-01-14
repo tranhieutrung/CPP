@@ -6,36 +6,56 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/14 14:46:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/14 15:32:32 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Replace.hpp"
 
-void handleError(const std::string message) {
+int handleError(const std::string message) {
 	std::cerr << "Error: " << message << std::endl;
-	exit (EXIT_FAILURE);
+	return (1);
 }
 
-void checkNumberArgs(int ac) {
+int invalidNumberArgs(int ac) {
 	if (ac != 4 ) {
-		handleError("Invalid number of arguments!");
+		return (handleError("Invalid number of arguments!"));
 	}
+	return (0);
 }
 
-void checkEmptyArgs(
-					const std::string &infile,
-					const std::string  &s1,
-					const std::string  &s2) {
-	if (infile.empty() || s1.empty() || s2.empty()) {
-		handleError("Empty arguments!");
+int isEmptyArgs( const std::string &infile,	const std::string  &s1) {
+	if (infile.empty() || s1.empty()) {
+		return (handleError("Empty arguments!"));
 	}
+	return (0);
 }
 
-std::string readFile(const std::string& infile) {
+int writeFile(const std::string& outfile, const std::string& data) {
+	std::ofstream ofs(outfile.c_str());
+	if (!ofs) {
+		handleError(outfile + ": Invalid output file.");
+		return (1);
+	}
+	ofs << data;
+	ofs.close();
+	return (0);
+}
+
+int main(int ac, char **av) {
+	if (invalidNumberArgs(ac))
+		return (EXIT_FAILURE);
+
+	std::string infile = av[1];
+	std::string s1 = av[2];
+	std::string s2 = av[3];
+
+	if (isEmptyArgs(infile, s1))
+		return (EXIT_FAILURE);
+	
 	std::ifstream ifs(infile);
 	if (!ifs) {
-		handleError(infile + ": Invalid input file.");
+		return (handleError("Invalid input file."));
 	}
 
 	std::string content, line;
@@ -46,30 +66,7 @@ std::string readFile(const std::string& infile) {
 		}
 	}
 	ifs.close();
-	return content;
-}
 
-void writeFile(const std::string& outfile, const std::string& data) {
-	std::ofstream ofs(outfile.c_str());
-	if (!ofs) {
-		handleError(outfile + ": Invalid output file.");
-	}
-	ofs << data;
-	ofs.close();
-}
-
-int main(int ac, char **av) {
-	checkNumberArgs(ac);
-
-	std::string infile = av[1];
-	std::string s1 = av[2];
-	std::string s2 = av[3];
-
-	checkEmptyArgs(infile, s1, s2);
-	
-	std::string inputData = readFile(infile);
-	std::string replacedData = Replace::replace(inputData, s1, s2);
-	writeFile(infile + ".replace", replacedData);
-
-	return (EXIT_SUCCESS);
+	std::string replacedData = Replace::replace(content, s1, s2);
+	return (writeFile(infile + ".replace", replacedData));
 }
