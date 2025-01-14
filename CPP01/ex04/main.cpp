@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/14 12:29:31 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/14 12:35:27 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,29 @@ void checkEmptyArgs(
 }
 
 std::string readFile(const std::string& infile) {
-    std::ifstream ifs(infile);
-    if (!ifs) {
-        handleError("Invalid input file: " + infile);
-    }
+	std::ifstream ifs(infile);
+	if (!ifs) {
+		handleError("Invalid input file: " + infile);
+	}
 
-    std::string content, line;
-    while (std::getline(ifs, line)) {
-        content += line;
-        if (!ifs.eof()) {
-            content += "\n";
-        }
-    }
-    ifs.close();
-    return content;
+	std::string content, line;
+	while (std::getline(ifs, line)) {
+		content += line;
+		if (!ifs.eof()) {
+			content += "\n";
+		}
+	}
+	ifs.close();
+	return content;
 }
 
 void writeFile(const std::string& outfile, const std::string& data) {
-    std::ofstream ofs(outfile.c_str());
-    if (!ofs) {
-        handleError("Invalid output file: " + outfile);
-    }
-    ofs << data;
-    ofs.close();
+	std::ofstream ofs(outfile.c_str());
+	if (!ofs) {
+		handleError("Invalid output file: " + outfile);
+	}
+	ofs << data;
+	ofs.close();
 }
 
 int main(int ac, char **av) {
