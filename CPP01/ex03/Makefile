@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 13:38:52 by hitran            #+#    #+#              #
-#    Updated: 2025/01/13 13:39:31 by hitran           ###   ########.fr        #
+#    Updated: 2025/01/14 21:49:07 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= weapon
+NAME 			= Weapon
 
 SRCS 			= main.cpp Weapon.cpp HumanA.cpp  HumanB.cpp
 

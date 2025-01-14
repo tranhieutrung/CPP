@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 13:24:56 by hitran            #+#    #+#              #
-#    Updated: 2025/01/13 13:34:02 by hitran           ###   ########.fr        #
+#    Updated: 2025/01/14 21:48:30 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= address
+NAME 			= Address
 
 SRCS 			= main.cpp
 

@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 21:30:50 by hitran            #+#    #+#              #
-#    Updated: 2025/01/13 21:35:26 by hitran           ###   ########.fr        #
+#    Updated: 2025/01/14 21:51:16 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= replace
+NAME 			= Replace
 
 SRCS 			= main.cpp Replace.cpp
 
