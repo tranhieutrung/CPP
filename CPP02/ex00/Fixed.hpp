@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:38:11 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/15 11:00:12 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/22 10:18:16 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class Fixed
 		void setRawBits( int const raw );
 
 	private:
-		int _fixedPointValue;
-		static const int _fractionalBits = 8;
+		int _value;
+		static const int _fBits = 8;
 };
-
-
