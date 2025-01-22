@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:38:11 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/15 10:59:59 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/22 10:39:04 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # include <iostream>
 # include <cmath>
+# include <climits>
 
 class Fixed
 {
@@ -31,8 +32,8 @@ class Fixed
 		int toInt ( void ) const;
 		
 	private:
-		int _fixedPointValue;
-		static const int _fractionalBits = 8;
+		int _value;
+		static const int _fBits = 8;
 };
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+std::ostream &operator<<(std::ostream &out, const Fixed &source);

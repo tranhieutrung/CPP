@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:38:11 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/21 14:11:48 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/22 10:39:08 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # include <iostream>
 # include <cmath>
+# include <climits>
 
 class Fixed
 {
@@ -47,14 +48,14 @@ class Fixed
 		Fixed &operator--(void);
 		Fixed operator--(int);
 		
-		static Fixed &min(Fixed &fixedPointNum1, Fixed &fixedPointNum2);
-		static const Fixed &min(const Fixed &fixedPointNum1, const Fixed &fixedPointNum2);
-		static Fixed &max(Fixed &fixedPointNum1, Fixed &fixedPointNum2);
-		static const Fixed &max(const Fixed &fixedPointNum1, const Fixed &fixedPointNum2);
+		static Fixed &min(Fixed &num1, Fixed &num2);
+		static const Fixed &min(const Fixed &num1, const Fixed &num2);
+		static Fixed &max(Fixed &num1, Fixed &num2);
+		static const Fixed &max(const Fixed &num1, const Fixed &num2);
 		
 	private:
-		int _fixedPointValue;
-		static const int _fractionalBits = 8;
+		int _value;
+		static const int _fBits = 8;
 };
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+std::ostream &operator<<(std::ostream &out, const Fixed &source);
