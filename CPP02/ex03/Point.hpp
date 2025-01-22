@@ -6,14 +6,13 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:43:41 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/22 14:21:13 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/22 14:37:22 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include "Fixed.hpp"
-# include <climits>
 
 class Point
 {
