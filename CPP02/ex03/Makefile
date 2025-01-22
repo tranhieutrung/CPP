@@ -6,13 +6,13 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 22:37:53 by hitran            #+#    #+#              #
-#    Updated: 2025/01/21 14:42:27 by hitran           ###   ########.fr        #
+#    Updated: 2025/01/22 14:17:39 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= BSP
 
-SRCS 			= main.cpp Fixed.cpp Point.cpp, bsp.cpp
+SRCS 			= main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
