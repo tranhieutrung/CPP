@@ -6,13 +6,14 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:43:41 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/21 14:57:48 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/22 14:21:13 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Fixed.hpp"
+# include "Fixed.hpp"
+# include <climits>
 
 class Point
 {
@@ -23,6 +24,8 @@ class Point
 		~Point();
 		
 		Point &operator=(const Point &other);
+		float xFloat( void ) const ;
+		float yFloat( void ) const ;
 			
 	private:
 		const Fixed _x;
