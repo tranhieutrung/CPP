@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:38:00 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/23 12:23:01 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/23 13:55:15 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ float Point::yFloat(void) const {
 	return (this->_y.toFloat());
 }
 
-Fixed &Fixed::operator=(const Fixed &other) {
-	this->_value = other.getRawBits();
+Point &Point::operator=(const Point &other) {
+	(void)other; //_x and _y are const, cannot change
 	return (*this);
 }
