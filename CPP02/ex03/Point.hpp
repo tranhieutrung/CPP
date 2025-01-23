@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:43:41 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/22 14:37:22 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/23 10:07:59 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ class Point
 {
 	public:
 		Point();
-		Point( const float number1, const float number2 );
-		Point( const Point &source );
+		Point(const float number1, const float number2);
+		Point(const Point &source);
 		~Point();
 		
 		Point &operator=(const Point &other);
-		float xFloat( void ) const ;
-		float yFloat( void ) const ;
+		float xFloat(void) const ;
+		float yFloat(void) const ;
 			
 	private:
 		const Fixed _x;
 		const Fixed _y;
 };
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp(Point const a, Point const b, Point const c, Point const point);

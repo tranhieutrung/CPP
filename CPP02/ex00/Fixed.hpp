@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:38:11 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/22 10:18:16 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/23 10:07:59 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Fixed
 		Fixed(const Fixed &source);
 		~Fixed();
 		
-		Fixed &operator = (const Fixed &other);
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
+		Fixed &operator= (const Fixed &other);
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 
 	private:
 		int _value;
