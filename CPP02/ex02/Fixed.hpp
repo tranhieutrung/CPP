@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:38:11 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/22 10:39:08 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/23 10:14:38 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ class Fixed
 {
 	public:
 		Fixed();
-		Fixed( const int number );
-		Fixed( const float number );
-		Fixed( const Fixed &source );
+		Fixed(const int number);
+		Fixed(const float number);
+		Fixed(const Fixed &source);
 		~Fixed();
 		
 		Fixed &operator=(const Fixed &other);
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
-		float toFloat( void ) const;
-		int toInt ( void ) const;
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+		float toFloat(void) const;
+		int toInt (void) const;
 
 		bool operator>(const Fixed &other) const;
 		bool operator<(const Fixed &other) const;
@@ -38,10 +38,10 @@ class Fixed
 		bool operator==(const Fixed &other) const;
 		bool operator!=(const Fixed &other) const;
 
-		Fixed operator+(const Fixed &other);
-		Fixed operator-(const Fixed &other);
-		Fixed operator*(const Fixed &other);
-		Fixed operator/(const Fixed &other);
+		Fixed operator+(const Fixed &other) const;
+		Fixed operator-(const Fixed &other) const;
+		Fixed operator*(const Fixed &other) const;
+		Fixed operator/(const Fixed &other) const;
 		
 		Fixed &operator++(void);
 		Fixed operator++(int);

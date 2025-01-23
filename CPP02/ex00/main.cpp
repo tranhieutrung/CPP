@@ -6,16 +6,15 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/22 10:19:46 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/23 12:05:08 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
-int main( void ) {
+int main(void) {
 	Fixed a;
-	Fixed b( a );
+	Fixed b(a);
 	Fixed c;
 	Fixed d;
 
