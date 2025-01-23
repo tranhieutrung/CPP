@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:38:00 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/23 10:20:56 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/23 12:23:01 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ float Point::xFloat(void) const {
 
 float Point::yFloat(void) const {
 	return (this->_y.toFloat());
-}
-
-Point &Point::operator=(const Point &other) {
-	
 }
 
 Fixed &Fixed::operator=(const Fixed &other) {
