@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/23 10:07:59 by hitran           ###   ########.fr       */
+/*   Updated: 2025/01/27 10:36:37 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ Fixed const b(Fixed(5.05f) * Fixed(2));
 Fixed c;
 c = Fixed(b.toFloat() * 0.124f);
 Fixed const d(Fixed(c.toFloat() / 0.1f));
-
-std::cout << (c / a)  << std::endl;
-std::cout << (a / b)  << std::endl;
 
 std::cout << a << std::endl;
 std::cout << ++a << std::endl;
