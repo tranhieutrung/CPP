@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/27 13:29:10 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/04 14:11:15 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main(void) {
 
 	// Case 2:
 	std::cout << "Case 2:" <<std::endl;
-	ClapTrap c("C");
-	ClapTrap d("D");
+	ClapTrap c(a);
+	ClapTrap d = b;
 	
 	for (int i = 0; i < 25; i++) {
 		std::cout << "Loop No." << i + 1 <<std::endl;
