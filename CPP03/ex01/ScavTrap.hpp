@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:50:22 by hitran            #+#    #+#             */
-/*   Updated: 2025/01/27 13:51:30 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/04 13:33:20 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap: public ClapTrap
 {
 	public:
 		ScavTrap();

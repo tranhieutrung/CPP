@@ -6,13 +6,13 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 22:37:53 by hitran            #+#    #+#              #
-#    Updated: 2025/01/27 14:15:10 by hitran           ###   ########.fr        #
+#    Updated: 2025/02/04 13:45:04 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= ScavTrap
 
-SRCS 			= main.cpp ClapTrap.cpp
+SRCS 			= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
