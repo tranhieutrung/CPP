@@ -6,14 +6,13 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:01 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/04 14:19:41 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/04 14:37:01 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap() {
-	this->_name = "Nonamed ScavTrap";
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamge = 20;
