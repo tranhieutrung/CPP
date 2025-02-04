@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/04 14:21:25 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/04 14:24:03 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ int main(void) {
 	ScavTrap e(c);
 	ScavTrap f = d;
 	
-	for (int i = 0; i < 55; i++) {
+	for (int i = 0; i < 60; i++) {
 		std::cout << "Loop No." << i + 1 <<std::endl;
 		e.attack("D");
 		f.takeDamage(20);
 		f.beRepaired(20);
+		f.guardGate();
 	}
 
 	return 0;
