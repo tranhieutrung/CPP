@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:50:22 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/04 14:34:46 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/05 15:22:51 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 	public:
 		FragTrap();

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 13:50:22 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/04 13:33:20 by hitran           ###   ########.fr       */
+/*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
+/*   Updated: 2025/02/05 15:45:27 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "DiamondTrap.hpp"
 
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+int main(void) {
 
-class DiamondTrap: public FragTrap, public ScavTrap
-{
-	public:
-		DiamondTrap();
-		DiamondTrap(const std::string  &name);
-		DiamondTrap(const DiamondTrap &source);
-		~DiamondTrap();
-		
-		DiamondTrap &operator=(const DiamondTrap &other);
-		using ScavTrap::attack;		
-		void whoAmI();
+	DiamondTrap a("Trung");
 
-	private:
-		std::string	_name;
-};
+	a.attack("Hieu");
+	a.takeDamage(10);
+	a.beRepaired(5);
+	a.whoAmI();
+
+	return 0;
+}
