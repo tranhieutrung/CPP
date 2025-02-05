@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:01 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/04 14:40:05 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/05 14:48:31 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ FragTrap &FragTrap::operator=(const FragTrap &other) {
 }
 
 void	FragTrap::highFivesGuys(void) {
-	std::cout << this->_name << ", its high fives time!" << std::endl;
+	std::cout << this->_name << ", you're doing an awesome job. ";
+	std::cout << "High fives! 🙌" << std::endl;
 }

@@ -6,17 +6,17 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/04 14:24:03 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/05 14:45:18 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void) {
 	// Case 1:
 	std::cout << "Case 1:" <<std::endl;
-	ScavTrap a;
-	ScavTrap b("B");
+	FragTrap a;
+	FragTrap b("B");
 	
 	for (int i = 0; i < 15; i++)
 	{
@@ -26,18 +26,15 @@ int main(void) {
 
 	// Case 2:
 	std::cout << "Case 2:" <<std::endl;
-	ScavTrap c("C");
-	ScavTrap d("D");
-	ScavTrap e(c);
-	ScavTrap f = d;
+	FragTrap c("C");
+	FragTrap d("D");
+	FragTrap e(c);
+	FragTrap f = d;
 	
-	for (int i = 0; i < 60; i++) {
+	for (int i = 0; i < 5; i++) {
 		std::cout << "Loop No." << i + 1 <<std::endl;
-		e.attack("D");
-		f.takeDamage(20);
-		f.beRepaired(20);
-		f.guardGate();
+		e.highFivesGuys();
+		f.highFivesGuys();
 	}
-
 	return 0;
 }

@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 22:37:53 by hitran            #+#    #+#              #
-#    Updated: 2025/02/04 14:36:14 by hitran           ###   ########.fr        #
+#    Updated: 2025/02/05 14:49:00 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= ScavTrap
+NAME 			= FragTrap
 
 SRCS 			= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
