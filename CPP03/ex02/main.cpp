@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:35:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/05 14:45:18 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/06 11:31:36 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void) {
 	FragTrap a;
 	FragTrap b("B");
 	
-	for (int i = 0; i < 15; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		std::cout << "Loop No." << i + 1 <<std::endl;
 		a.attack("B");
@@ -28,13 +28,20 @@ int main(void) {
 	std::cout << "Case 2:" <<std::endl;
 	FragTrap c("C");
 	FragTrap d("D");
+
+	c.highFivesGuys();
+	d.highFivesGuys();
+	d.takeDamage(50);
+	
+	std::cout << "Case 3:" <<std::endl;
 	FragTrap e(c);
 	FragTrap f = d;
-	
+
 	for (int i = 0; i < 5; i++) {
 		std::cout << "Loop No." << i + 1 <<std::endl;
-		e.highFivesGuys();
-		f.highFivesGuys();
+		e.attack("F");
+		f.takeDamage(30);
+		f.beRepaired(10);
 	}
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:01 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/05 14:48:31 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/06 11:30:03 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ FragTrap::FragTrap(const std::string &name): ClapTrap(name) {
 
 FragTrap::FragTrap(const FragTrap &source): ClapTrap(source) {
 	std::cout << "FragTrap: Copy constructor called" << std::endl;
-	*this = source;
 }
 
 FragTrap::~FragTrap(){
