@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:01 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/04 14:37:01 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/06 11:14:22 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ ScavTrap::ScavTrap(const std::string &name): ClapTrap(name) {
 
 ScavTrap::ScavTrap(const ScavTrap &source): ClapTrap(source) {
 	std::cout << "ScavTrap: Copy constructor called" << std::endl;
-	*this = source;
 }
 
 ScavTrap::~ScavTrap(){
