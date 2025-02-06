@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:50:22 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/05 15:22:53 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/06 11:34:15 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ScavTrap: virtual public ClapTrap
 		
 		ScavTrap &operator=(const ScavTrap &other);
 		
-		void	attack(const std::string& target);
+		void	attack(const std::string& target) override;
 		void	guardGate();
 
 	private:
