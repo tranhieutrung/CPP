@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/07 12:16:45 by hitran            #+#    #+#             */
+/*   Updated: 2025/02/07 12:20:37 by hitran           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+
+# include "WrongAnimal.hpp"
+
+class WrongCat: public WrongAnimal
+{
+	public:
+		WrongCat();
+		WrongCat(const WrongCat &source);
+		~WrongCat();
+		
+		WrongCat 	&operator=(const WrongCat &other);
+		void		makeSound() const override;
+
+	private:
+};
