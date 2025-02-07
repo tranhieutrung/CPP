@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:40 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:16:40 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/07 12:47:42 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 WrongCat::WrongCat(): WrongAnimal() {
 	std::cout << "WrongCat: Default constructor called" << std::endl;
-	this->type = "WrongCat";
+	this->_type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat &source): WrongAnimal() {
 	std::cout << "WrongCat: Copy constructor called" << std::endl;
-	this->type = source.type;
+	this->_type = source._type;
 }
 
 WrongCat::~WrongCat() {
@@ -29,7 +29,7 @@ WrongCat::~WrongCat() {
 WrongCat &WrongCat::operator=(const WrongCat &other) {
 	std::cout << "WrongCat: Copy assignment operator called" << std::endl;
 	if (this != &other) {
-		this->type = other.type;
+		this->_type = other._type;
 	}
 	return (*this);
 }

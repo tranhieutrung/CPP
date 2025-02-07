@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:31 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:19:08 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/07 12:47:42 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class WrongAnimal
 		
 		WrongAnimal 	&operator=(const WrongAnimal &other);
 		virtual void 	makeSound() const;
-		std::string		getType() const;
+		std::string		get_type() const;
 	
 	protected:
-		std::string		type;
+		std::string		_type;
 };

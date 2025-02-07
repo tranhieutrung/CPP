@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:51 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:16:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/07 12:47:42 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 WrongDog::WrongDog(): WrongAnimal() {
 	std::cout << "WrongDog: Default constructor called" << std::endl;
-	this->type = "WrongDog";
+	this->_type = "WrongDog";
 }
 
 WrongDog::WrongDog(const WrongDog &source): WrongAnimal() {
 	std::cout << "WrongDog: Copy constructor called" << std::endl;
-	this->type = source.type;
+	this->_type = source._type;
 }
 
 WrongDog::~WrongDog() {
@@ -29,7 +29,7 @@ WrongDog::~WrongDog() {
 WrongDog &WrongDog::operator=(const WrongDog &other) {
 	std::cout << "WrongDog: Copy assignment operator called" << std::endl;
 	if (this != &other) {
-		this->type = other.type;
+		this->_type = other._type;
 	}
 	return (*this);
 }

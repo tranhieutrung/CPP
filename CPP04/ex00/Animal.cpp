@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:14:58 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:18:45 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/07 12:47:42 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,21 @@ Animal::~Animal() {
 Animal &Animal::operator=(const Animal &other) {
 	std::cout << "Animal: Copy assignment operator called" << std::endl;
 	if (this != &other) {
-		this->type = other.type;
+		this->_type = other._type;
 	}
 	return (*this);
 }
 
 void	Animal::makeSound(void) const {
-	if (this->type == "Dog") {
+	if (this->_type == "Dog") {
 		std::cout << "Woof woof" << std::endl;
-	} else	if (this->type == "Cat") {
+	} else	if (this->_type == "Cat") {
 		std::cout << "Meowwwwwwww" << std::endl;
 	} else {
 		std::cout << "Quack quack quack" << std::endl;
 	}
 }
 
-std::string	Animal::getType(void) const{
-	return (this->type);
+std::string	Animal::get_type(void) const{
+	return (this->_type);
 }
