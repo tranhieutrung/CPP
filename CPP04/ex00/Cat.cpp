@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:24 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:47:42 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/10 10:00:12 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Cat::Cat(): Animal() {
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat &source): Animal() {
+Cat::Cat(const Cat &other): Animal() {
 	std::cout << "Cat: Copy constructor called" << std::endl;
-	this->_type = source._type;
+	this->_type = other._type;
 }
 
 Cat::~Cat() {

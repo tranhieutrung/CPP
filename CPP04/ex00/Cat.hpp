@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:30 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:20:20 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/10 10:00:13 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Cat: public Animal
 {
 	public:
 		Cat();
-		Cat(const Cat &source);
+		Cat(const Cat &other);
 		~Cat();
 		
 		Cat 	&operator=(const Cat &other);
