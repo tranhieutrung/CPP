@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:24 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 10:17:47 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/10 15:06:37 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ Cat &Cat::operator=(const Cat &other) {
 	if (this != &other) {
 		this->_type = other._type;
 		delete this->_brian;
-		this->_brian = new Brain(*other._brian);
+		if (other._brian != nullptr) {
+			this->_brian = new Brain(*other._brian);
+		} else {
+			this->_brian = nullptr;
+		}
 	}
 	return (*this);
 }
