@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:14:58 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 10:00:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/10 15:11:03 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,7 @@ Animal &Animal::operator=(const Animal &other) {
 }
 
 void	Animal::makeSound(void) const {
-	if (this->_type == "Dog") {
-		std::cout << "Woof woof" << std::endl;
-	} else	if (this->_type == "Cat") {
-		std::cout << "Meowwwwwwww" << std::endl;
-	} else {
-		std::cout << "Quack quack quack" << std::endl;
-	}
+	std::cout << "Quack quack quack" << std::endl;
 }
 
 std::string	Animal::get_type(void) const{
