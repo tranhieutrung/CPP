@@ -15,13 +15,15 @@
 Brain::Brain() {
 	std::cout << "Brain: Default constructor called" << std::endl;
 	for (int i = 0; i < 100; i++) {
-		this->_ideas[i] = "Idea No. " + i + 1;
+		this->_ideas[i] = "Idea No. " + (i + 1);
 	}
 }
 
-Brain::Brain(const Brain &source) {
+Brain::Brain(const Brain &other) {
 	std::cout << "Brain: Copy constructor called" << std::endl;
-	*this = source;
+	for (int i = 0; i < 100; i++) {
+		this->_ideas[i] = other._ideas[i];
+	}
 }
 
 Brain::~Brain() {
