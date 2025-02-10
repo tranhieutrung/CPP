@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:24 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 14:39:07 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/10 10:17:47 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@ Cat::Cat(): Animal(), _brian(new Brain()) {
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat &source): Animal(), _brian(new Brain(*source._brian)) {
+Cat::Cat(const Cat &other): Animal(), _brian(new Brain(*other._brian)) {
 	std::cout << "Cat: Copy constructor called" << std::endl;
-	this->_type = source._type;
+	this->_type = other._type;
 }
 
 Cat::~Cat() {
 	std::cout << "Cat: Destructor called" << std::endl;
+	delete this->_brian;
 }
 
 Cat &Cat::operator=(const Cat &other) {
