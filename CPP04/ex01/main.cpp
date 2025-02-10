@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:02 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:47:42 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/10 10:58:29 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,38 @@
 
 int main()
 {
+	// Test 1:
+	int n = 12;
+
 	std::cout << "Animal construtor:" << " " << std::endl;
-	const Animal* meta = new Animal();
+	const Animal *animal[n];
 
-	std::cout << std::endl << "Dog construtor:" << " " << std::endl;
-	const Animal* dog = new Dog();
-
-	std::cout << std::endl << "Cat construtor:" << " " << std::endl;
-	const Animal* cat = new Cat();
-
-	std::cout << std::endl << "Wrong construtor:" << " " << std::endl;
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-
-	std::cout << std::endl << "Wrong Dog construtor:" << " " << std::endl;
-	const WrongAnimal* wrongDog = new WrongDog();
-
-	std::cout << std::endl << "Wrong Cat construtor:" << " " << std::endl;
-	const WrongAnimal* wrongCat = new WrongCat();
-	
-	std::cout << std::endl << "Who are you?:" << " " << std::endl;
-	std::cout << dog->get_type() << " " << std::endl;
-	std::cout << cat->get_type() << " " << std::endl;
-	std::cout << wrongDog->get_type() << " " << std::endl;
-	std::cout << wrongCat->get_type() << " " << std::endl;
+	animal[0] = new Dog();
+	for (int i = 1; i < n/2; i++) {
+		std::cout << "Loop No." << i + 1 << ":" << std::endl;
+		animal[i] = animal[i -1];
+	}
+	animal[n/2] = new Cat();
+	for (int i = n/2 + 1; i < n; i++) {
+		std::cout << "Loop No." << i + 1 << ":" << std::endl;
+		animal[i] = animal[i -1];
+	}
 
 	std::cout << std::endl << "Let's make sounds:" << " " << std::endl;
-	cat->makeSound();
-	dog->makeSound();
-	meta->makeSound();
-	wrongCat->makeSound();
-	wrongDog->makeSound();
-	wrongMeta->makeSound();
+	for (int i = 0; i < n; i++) {
+		std::cout << "Animal No." << i + 1 << ":" << std::endl;
+		animal[i]->makeSound();
+	}
+
 
 	std::cout << std::endl << "Destructor:" << " " << std::endl;
-	delete meta;
-	delete cat;
-	delete dog;
-	delete wrongMeta;
-	delete wrongCat;
-	delete wrongDog;
-	
+	for (int i = 0; i < n; i++)
+	 {
+		std::cout << "Animal No." << i + 1 << ":" << std::endl;
+		delete animal[i];
+	}
+
+	// Test 2:
+
 	return 0;
 }

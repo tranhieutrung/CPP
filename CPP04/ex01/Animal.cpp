@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:14:58 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/07 12:47:42 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/10 10:00:51 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Animal::Animal() {
 	std::cout << "Animal: Default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &source) {
+Animal::Animal(const Animal &other) {
 	std::cout << "Animal: Copy constructor called" << std::endl;
-	*this = source;
+	*this = other;
 }
 
 Animal::~Animal() {

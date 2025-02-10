@@ -18,7 +18,7 @@ class Brain
 {
 	public:
 		Brain();
-		Brain(const Brain &source);
+		Brain(const Brain &other);
 		virtual ~Brain();
 		
 		Brain 			&operator=(const Brain &other);
