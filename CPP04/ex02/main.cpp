@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:02 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/12 11:34:19 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/12 11:50:08 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int main()
 	std::cout << "Animal construtor:" << std::endl;
 	Animal *animal[3];
 
-	for (int i = 0; i < 3; i++) {
-		std::cout << "Animal No.: " << i + 1 << std::endl;
-		animal[0] = new Dog();
-		animal[1] = new Cat();
-		animal[2] = new Dog(); //new Animal();
-	}
+	std::cout << "Animal No.1: " << std::endl;
+	animal[0] = new Dog();
+	std::cout << "Animal No.2: "  << std::endl;
+	animal[1] = new Cat();
+	std::cout << "Animal No.3: " << std::endl;
+	animal[2] = new Dog(); //new Animal();
 	
 
 	std::cout << std::endl << "Let's make sounds:" << std::endl;
