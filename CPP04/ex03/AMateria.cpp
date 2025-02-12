@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 12:14:58 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 15:11:03 by hitran           ###   ########.fr       */
+/*   Created: 2025/02/12 13:35:27 by hitran            #+#    #+#             */
+/*   Updated: 2025/02/12 13:59:21 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ AMateria::AMateria(std::string const & type): _type(type) {
 	std::cout << "AMateria: Type constructor called" << std::endl;
 }
 
-AMateria::AMateria(const AMateria &other) {
+AMateria::AMateria(const AMateria &other): _type(other._type) {
 	std::cout << "AMateria: Copy constructor called" << std::endl;
-	*this = other;
 }
 
 AMateria::~AMateria() {
@@ -37,14 +36,12 @@ AMateria &AMateria::operator=(const AMateria &other) {
 	return (*this);
 }
 
-std::string const & getType() const {
-
+std::string const & AMateria::getType() const {
+	return (this->_type);
 }
 
 AMateria* AMateria::clone() const {
-
 }
 
 void AMateria::use(ICharacter& target) {
-
 }

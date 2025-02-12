@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 12:15:13 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/12 12:15:00 by hitran           ###   ########.fr       */
+/*   Created: 2025/02/12 13:35:52 by hitran            #+#    #+#             */
+/*   Updated: 2025/02/12 13:35:53 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 # include <iostream>
 
+class AMateria;
+
 class IMateriaSource
 {
 	public:
-		IMateriaSource();
-		IMateriaSource(const IMateriaSource &other);
-		~IMateriaSource();
-
 		virtual ~IMateriaSource() {}
 		virtual void learnMateria(AMateria*) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
-
-	protected:
 };

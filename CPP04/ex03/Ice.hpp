@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 12:15:13 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/12 13:26:02 by hitran           ###   ########.fr       */
+/*   Created: 2025/02/12 13:35:42 by hitran            #+#    #+#             */
+/*   Updated: 2025/02/12 13:56:28 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
+# include "AMateria.hpp"
 
-class AMateria;
-
-class ICharacter
+class Ice: public AMateria
 {
 	public:
-		virtual ~ICharacter() {}
-		virtual std::string const &getName() const = 0;
-		virtual void equip(ICharacter* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		Ice();
+		Ice(const Ice &other);
+		Ice &operator=(const Ice &other);
+		virtual ~Ice();
+
+		virtual Ice* clone() const override;
+		virtual void use(ICharacter& target) override;
+
+	protected:
 };
