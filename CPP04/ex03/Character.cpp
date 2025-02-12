@@ -12,20 +12,29 @@
 
 #include "Character.hpp"
 
-Character::Character(): _name("Nonamed"), _inventory() {
+Character::Character(): _name("Nonamed") {
 	std::cout << "Character: Default constructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
+		this->_inventory[i] = nullptr;
+	}
 }
 
-Character::Character(const std::string &name): _name(name), _inventory() {
+Character::Character(const std::string &name): _name(name) {
 	std::cout << "Character: Name constructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
+		this->_inventory[i] = nullptr;
+	}
 }
 
 Character::Character(const Character &other): _name(other._name) {
 	std::cout << "Character: Copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++) {
-		if(other._inventory[i]) {
+		if (other._inventory[i]) {
 			this->_inventory[i] = other._inventory[i]->clone();
+		} else {
+			this->_inventory[i] = nullptr;
 		}
+
 	}
 }
 
@@ -40,10 +49,35 @@ Character &Character::operator=(const Character &other) {
 	if (this != &other) {
 		this->_name = other._name;
 		for (int i = 0; i < 4; i++) {
-			if(other._inventory[i]) {
+			delete this->_inventory[i];
+			this->_inventory[i] = nullptr;
+			if (other._inventory[i]) {
 				this->_inventory[i] = other._inventory[i]->clone();
 			}
 		}
 	}
 	return (*this);
+}
+
+std::string const &Character::getName() const {
+	return (this->_name);
+}
+
+void Character::equip(AMateria* m) {
+	for (int i = 0; i < 4; i++) {
+		if(!this->_inventory[i]) {
+			this->_inventory[i] = m->clone();
+			delete m;
+			return ;
+		}
+	}
+	delete m;
+}
+
+void Character::unequip(int idx) {
+
+}
+
+void Character::use(int idx, ICharacter& target) {
+
 }

@@ -23,10 +23,10 @@ class Character: public ICharacter
 		Character &operator=(const Character &other);
 		virtual ~Character();
 
-		virtual std::string const &getName() const = 0;
-		virtual void equip(ICharacter* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		virtual std::string const &getName() const;
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter& target);
 
 	private:
 		std::string	_name;
