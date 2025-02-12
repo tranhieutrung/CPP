@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 12:16:09 by hitran            #+#    #+#              #
-#    Updated: 2025/02/12 12:09:17 by hitran           ###   ########.fr        #
+#    Updated: 2025/02/12 13:27:18 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Animal
+NAME 			= Abstract
 
 SRCS 			=	main.cpp Brain.cpp\
 					AAnimal.cpp Dog.cpp Cat.cpp \

@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 12:16:09 by hitran            #+#    #+#              #
-#    Updated: 2025/02/07 12:16:11 by hitran           ###   ########.fr        #
+#    Updated: 2025/02/12 12:41:35 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Animal
+NAME 			= Polymorphism
 
 SRCS 			=	main.cpp \
 					Animal.cpp Dog.cpp Cat.cpp \
