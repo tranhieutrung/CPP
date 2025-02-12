@@ -6,16 +6,16 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:30 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 10:00:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/12 12:08:23 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Cat: public Animal
+class Cat: public AAnimal
 {
 	public:
 		Cat();

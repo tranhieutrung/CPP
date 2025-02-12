@@ -6,18 +6,18 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:24 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 15:06:37 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/12 12:08:22 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(): Animal(), _brian(new Brain()) {
+Cat::Cat(): AAnimal(), _brian(new Brain()) {
 	std::cout << "Cat: Default constructor called" << std::endl;
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat &other): Animal(), _brian(new Brain(*other._brian)) {
+Cat::Cat(const Cat &other): AAnimal(), _brian(new Brain(*other._brian)) {
 	std::cout << "Cat: Copy constructor called" << std::endl;
 	this->_type = other._type;
 }

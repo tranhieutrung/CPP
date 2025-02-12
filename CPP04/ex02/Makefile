@@ -6,14 +6,14 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 12:16:09 by hitran            #+#    #+#              #
-#    Updated: 2025/02/10 10:46:48 by hitran           ###   ########.fr        #
+#    Updated: 2025/02/12 12:09:17 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= Animal
 
 SRCS 			=	main.cpp Brain.cpp\
-					Animal.cpp Dog.cpp Cat.cpp \
+					AAnimal.cpp Dog.cpp Cat.cpp \
 					WrongAnimal.cpp WrongCat.cpp WrongDog.cpp
 
 OBJS			= $(SRCS:.cpp=.o)

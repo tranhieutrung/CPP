@@ -6,18 +6,18 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 15:07:27 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/12 12:08:24 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal(), _brian(new Brain()) {
+Dog::Dog(): AAnimal(), _brian(new Brain()) {
 	std::cout << "Dog: Default constructor called" << std::endl;
 	this->_type = "Dog";
 }
 
-Dog::Dog(const Dog &other): Animal(), _brian(new Brain(*other._brian)) {
+Dog::Dog(const Dog &other): AAnimal(), _brian(new Brain(*other._brian)) {
 	std::cout << "Dog: Copy constructor called" << std::endl;
 	this->_type = other._type;
 }

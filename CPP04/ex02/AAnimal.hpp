@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,24 +15,24 @@
 # include <iostream>
 
 /*
-	The Animal class is an abstract class because it contains a pure virtual 
+	The AAnimal class is an abstract class because it contains a pure virtual 
 	function `makeSound()`. A pure virtual function (denoted by `= 0`) has no 
-	implementation in the Animal class itself.
+	implementation in the AAnimal class itself.
 
 	This forces any derived class (such as Dog, Cat, etc.) to implement its own 
 	version of `makeSound()`. As a result, we cannot create an object of type 
-	Animal directly. It serves as a base class to define common behavior for all
-	animals, while allowing flexibility for specific implementations of animal 
+	AAnimal directly. It serves as a base class to define common behavior for all
+	AAnimals, while allowing flexibility for specific implementations of AAnimal 
 	sounds in derived classes.
 */
-class Animal
+class AAnimal
 {
 	public:
-		Animal();
-		Animal(const Animal &other);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(const AAnimal &other);
+		virtual ~AAnimal();
 		
-		Animal 			&operator=(const Animal &other);
+		AAnimal 			&operator=(const AAnimal &other);
 		virtual void	makeSound() const = 0;
 		std::string		get_type() const;
 	
