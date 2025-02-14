@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 13:35:42 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/12 13:56:28 by hitran           ###   ########.fr       */
+/*   Created: 2025/02/14 11:54:35 by hitran            #+#    #+#             */
+/*   Updated: 2025/02/14 11:54:36 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Character: public ICharacter
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);
+		AMateria *getInventory(int index);
 
 	private:
 		std::string	_name;
