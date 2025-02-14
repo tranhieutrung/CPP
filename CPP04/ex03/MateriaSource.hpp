@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 12:15:13 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/14 14:20:07 by hitran           ###   ########.fr       */
+/*   Created: 2025/02/14 11:54:35 by hitran            #+#    #+#             */
+/*   Updated: 2025/02/14 12:42:24 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
+# include "AMateria.hpp"
+# include "IMateriaSource.hpp"
 
-class AMateria;
-
-class ICharacter
+class MateriaSource: public IMateriaSource
 {
 	public:
-		virtual ~ICharacter() {}
-		virtual std::string const &getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
-		virtual AMateria *getInventory(int index) = 0;
+		MateriaSource();
+		MateriaSource(const MateriaSource &other);
+		MateriaSource &operator=(const MateriaSource &other);
+		virtual ~MateriaSource();
+
+		virtual void learnMateria(AMateria*) override;
+		virtual AMateria* createMateria(std::string const & type) override;
+
+	private:
+		AMateria	*_inventory[4];
 };

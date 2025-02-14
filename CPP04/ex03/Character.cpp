@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 11:54:20 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/14 11:56:13 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/14 14:52:42 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ Character::Character(const Character &other): _name(other._name) {
 Character::~Character() {
 	std::cout << "Character: Destructor called" << std::endl;
 	for (int idx = 0; idx < 4; idx++) {
-		std::cout << "Character: Inventory No." << idx + 1 << " was destroyed";
-		std::cout << std::endl;
-		delete this->_inventory[idx];
+		if (this->_inventory[idx]) {
+			std::cout << "Character: Inventory No." << idx + 1;
+			std::cout << " was destroyed" << std::endl;
+			delete this->_inventory[idx];
+		}
 	}
 }
 
@@ -75,26 +77,29 @@ void Character::equip(AMateria* m) {
 			return ;
 		}
 	}
+	std::cout << "Character: Inventory full" << std::endl;
 	delete m;
 }
 
 void Character::unequip(int idx) {
-	std::cout << "Character: unequip called" << std::endl;
 	if (idx >= 0 && idx < 4 && this->_inventory[idx]) {
+		std::cout << "Character: inventory No." << idx + 1;
+		std::cout << ": unequip called" << std::endl;
 		this->_inventory[idx] = nullptr;
 	}
 }
 
 void Character::use(int idx, ICharacter& target) {
-	std::cout << "Character: use called" << std::endl;
 	if (idx >= 0 && idx < 4 && this->_inventory[idx]) {
+		std::cout << "Character: inventory No." << idx + 1;
+		std::cout << ": use called" << std::endl;
 		this->_inventory[idx]->use(target);
 	}
 }
 
 AMateria *Character::getInventory(int idx) {
 	std::cout << "Character: getInventory called" << std::endl;
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < 4 && this->_inventory[idx])
 		return this->_inventory[idx];
 	return (nullptr);
 }

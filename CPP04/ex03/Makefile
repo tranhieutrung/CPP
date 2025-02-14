@@ -6,16 +6,16 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 12:16:09 by hitran            #+#    #+#              #
-#    Updated: 2025/02/12 13:36:04 by hitran           ###   ########.fr        #
+#    Updated: 2025/02/14 13:03:10 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Interface
+NAME 			= Materia
 
 SRCS 			=	main.cpp \
-					ICharacter.cpp \
 					AMateria.cpp \
-					Ice.cpp	Cure.cpp
+					Ice.cpp	Cure.cpp \
+					Character.cpp MateriaSource.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 

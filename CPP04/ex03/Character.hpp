@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 11:54:35 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/14 11:54:36 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/14 14:20:00 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Character: public ICharacter
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);
-		AMateria *getInventory(int index);
+		virtual AMateria *getInventory(int index);
 
 	private:
 		std::string	_name;
