@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:35:27 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/14 13:02:07 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/14 15:39:44 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ AMateria &AMateria::operator=(const AMateria &other) {
 }
 
 std::string const & AMateria::getType() const {
+	std::cout << "AMateria: getType called" << std::endl;
 	return (this->_type);
 }
 

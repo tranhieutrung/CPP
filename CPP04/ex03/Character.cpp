@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 11:54:20 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/14 14:52:42 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/14 15:39:19 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ Character &Character::operator=(const Character &other) {
 }
 
 std::string const &Character::getName() const {
+	std::cout << "Character: getName called" << std::endl;
 	return (this->_name);
 }
 

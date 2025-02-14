@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:43:07 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/14 14:54:24 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/14 15:38:40 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,33 @@ int main()
 	me->use(3, *bob);
 	me->use(4, *bob); // Should not work
 
+	std::cout << "\n==== TEST 7: Character's copy assignment operator =====\n";
+	Character* original = new Character("Original");
+	original->equip(new Ice()); // Equip some materia
+	original->equip(new Cure());
+
+	Character* copy = new Character("Copy");
+	copy->equip(new Cure()); // Equip some materia
+	copy->equip(new Ice());
+	*copy = *original; // Copy the original character to the new character
+
+	// Check if the copy has the same inventory as the original
+	std::cout << "\nOriginal Character Inventory:\n";
+	for (int i = 0; i < 2; ++i) {
+		if (original->getInventory(i)) {
+			std::cout << original->getInventory(i)->getType() << std::endl;
+		}
+	}
+
+	std::cout << "\nCopied Character Inventory:\n";
+	for (int i = 0; i < 2; ++i) {
+		if (copy->getInventory(i)) {
+			std::cout << copy->getInventory(i)->getType() << std::endl;
+		}
+	}
+
+
+
 	std::cout << "\n========== Cleaning Up Memory ==========\n";
 	std::cout << "\nClean Bob (Character)\n";
 	delete bob;
@@ -94,7 +121,11 @@ int main()
 	delete me;
 	std::cout << "\nClean src (MateriaSource)\n";
 	delete src;
-
+	std::cout << "\nClean original (Character)\n";
+	delete original;
+	std::cout << "\nClean copy (Character)\n";
+	delete copy;
+	
 	std::cout << "\n========== THANK YOU SO MUCH ==========\n";
 
 	return 0;
