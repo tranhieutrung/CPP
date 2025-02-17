@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:15:30 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 10:00:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 14:51:50 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ class Cat: public Animal
 		void	makeSound() const override;
 
 	private:
-		Brain	*_brian;
+		Brain	*_brain;
 };
