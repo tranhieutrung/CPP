@@ -6,13 +6,13 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:17 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 10:00:18 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 10:18:18 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() {
+WrongAnimal::WrongAnimal(): _type("WrongUnknow") {
 	std::cout << "WrongAnimal: Default constructor called" << std::endl;
 }
 

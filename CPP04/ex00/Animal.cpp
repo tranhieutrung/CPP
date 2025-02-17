@@ -6,13 +6,13 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:14:58 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 15:10:48 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 10:17:34 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() {
+Animal::Animal(): _type("Unknown") {
 	std::cout << "Animal: Default constructor called" << std::endl;
 }
 
