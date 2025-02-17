@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:51 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 10:00:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 14:39:57 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,4 @@ WrongDog &WrongDog::operator=(const WrongDog &other) {
 		this->_type = other._type;
 	}
 	return (*this);
-}
-
-void	WrongDog::makeSound(void) const {
-	std::cout << "WrongDog: Ba ba ba banana" << std::endl;
 }

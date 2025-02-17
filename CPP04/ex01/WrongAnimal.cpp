@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:17 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/17 10:23:32 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 14:41:36 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
 }
 
 void	WrongAnimal::makeSound(void) const {
-	std::cout << "wrong animal: ba ba ba banana" << std::endl;
+	std::cout << "WrongAnimal: ba ba ba banana" << std::endl;
 }
 
 std::string	WrongAnimal::get_type(void) const{

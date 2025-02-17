@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:45 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/10 10:00:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 14:39:50 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class WrongCat: public WrongAnimal
 		~WrongCat();
 		
 		WrongCat 	&operator=(const WrongCat &other);
-		void		makeSound() const override;
 
 	private:
 };
