@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:14:58 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/17 10:23:13 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 15:06:52 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ void	Animal::makeSound(void) const {
 	std::cout << "Quack quack quack" << std::endl;
 }
 
-std::string	Animal::get_type(void) const{
+std::string	Animal::getType(void) const{
 	return (this->_type);
 }

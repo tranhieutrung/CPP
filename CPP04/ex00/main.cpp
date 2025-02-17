@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:02 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/17 10:19:21 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 15:06:52 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ int main()
 	const WrongAnimal* wrongCat = new WrongCat();
 	
 	std::cout << std::endl << "Who are you?:" << " " << std::endl;
-	std::cout << meta->get_type() << " " << std::endl;
-	std::cout << dog->get_type() << " " << std::endl;
-	std::cout << cat->get_type() << " " << std::endl;
-	std::cout << wrongMeta->get_type() << " " << std::endl;
-	std::cout << wrongDog->get_type() << " " << std::endl;
-	std::cout << wrongCat->get_type() << " " << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
+	std::cout << dog->getType() << " " << std::endl;
+	std::cout << cat->getType() << " " << std::endl;
+	std::cout << wrongMeta->getType() << " " << std::endl;
+	std::cout << wrongDog->getType() << " " << std::endl;
+	std::cout << wrongCat->getType() << " " << std::endl;
 
 	std::cout << std::endl << "Let's make sounds:" << " " << std::endl;
 	meta->makeSound();

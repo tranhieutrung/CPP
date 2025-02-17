@@ -34,7 +34,7 @@ class AAnimal
 		
 		AAnimal 		&operator=(const AAnimal &other);
 		virtual void	makeSound() const = 0;
-		std::string		get_type() const;
+		std::string		getType() const;
 	
 	protected:
 		std::string		_type;
