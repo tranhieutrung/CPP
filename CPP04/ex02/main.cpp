@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:16:02 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/12 12:08:30 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 11:13:49 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	std::cout << "AAnimal No.2: "  << std::endl;
 	AAnimal[1] = new Cat();
 	std::cout << "AAnimal No.3: " << std::endl;
-	AAnimal[2] = new Dog(); //new AAnimal();
+	AAnimal[2] = new Dog(); //can not instantiate: new AAnimal();
 	
 
 	std::cout << std::endl << "Let's make sounds:" << std::endl;
