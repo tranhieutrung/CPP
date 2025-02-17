@@ -15,7 +15,7 @@
 Brain::Brain() {
 	std::cout << "Brain: Default constructor called" << std::endl;
 	for (int i = 0; i < 100; i++) {
-		this->_ideas[i] = "Idea No. " + (i + 1);
+		this->_ideas[i] = "Idea No. " + std::to_string(i + 1);
 	}
 }
 
