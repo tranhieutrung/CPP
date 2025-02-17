@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:43:07 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/14 15:38:40 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 15:15:12 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,16 @@ int main()
 	me->equip(extra); // Should not be equipped, delete extra in equip
 
 	std::cout << "\n========== TEST 5: Unequip and Delete ==========\n";
-	AMateria *savedMateria = me->getInventory(1);
-	if (savedMateria) {
-		me->unequip(1);
-		delete savedMateria;
-	} else {
-    	std::cout << "Error: Inventory slot is empty!" << std::endl;
+	
+	Character *character = dynamic_cast<Character*>(me);
+	if (character) {
+		AMateria *savedMateria = character->getInventory(1);
+		if (savedMateria) {
+			me->unequip(1);
+			delete savedMateria;
+		} else {
+			std::cout << "Error: Inventory slot is empty!" << std::endl;
+		}
 	}
 
 	std::cout << "\n========== TEST 6: Use All Equipped Materia ==========\n";
