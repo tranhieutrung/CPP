@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:43:07 by hitran            #+#    #+#             */
-/*   Updated: 2025/02/17 15:15:12 by hitran           ###   ########.fr       */
+/*   Updated: 2025/02/17 15:27:10 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,6 @@ int main()
 			std::cout << copy->getInventory(i)->getType() << std::endl;
 		}
 	}
-
-
 
 	std::cout << "\n========== Cleaning Up Memory ==========\n";
 	std::cout << "\nClean Bob (Character)\n";

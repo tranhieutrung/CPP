@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 12:16:09 by hitran            #+#    #+#              #
-#    Updated: 2025/02/14 13:03:10 by hitran           ###   ########.fr        #
+#    Updated: 2025/02/18 13:36:42 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Materia
+NAME 			= Interfaces
 
 SRCS 			=	main.cpp \
 					AMateria.cpp \
