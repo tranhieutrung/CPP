@@ -13,7 +13,7 @@ To ensure that you are using C++ effectively, follow these principles:
 ## Exercise 00: Megaphone
 Write a program that converts input text to uppercase and prints it.
 
-C++ techniques used:
+C++ techniques used:<br>
 ✅ std::string methods (.empty(), .length(), etc.)<br>
 ✅ Range-based for loops for character iteration<br>
 ✅ std::cout instead of printf()<br>
@@ -23,7 +23,7 @@ Create a simple phonebook program with two classes:
 - PhoneBook: Stores up to 8 contacts and replaces the oldest when full.
 - Contact: Represents a single contact.
 
-C++ concepts practiced:
+C++ concepts practiced:<br>
 ✅ Declaring and using classes properly<br>
 ✅ Using constructors to initialize objects<br>
 ✅ Reading from standard input (std::cin) and writing to standard output (std::cout)<br>
