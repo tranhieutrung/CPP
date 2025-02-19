@@ -1,8 +1,8 @@
 # C++ Module 00
-This module is your first step into Object-Oriented Programming (OOP) with C++. While C++ is an extension of C, it introduces many new concepts that help write better-structured and more efficient code. The goal is to encourage writing C++-style code instead of C-style code.
+This module is my first step into Object-Oriented Programming (OOP) with C++. While C++ is an extension of C, it introduces many new concepts that help write better-structured and more efficient code. The goal is to encourage writing C++-style code instead of C-style code.
 
 # Writing in a C++ Manner
-To ensure that you are using C++ effectively, follow these principles:
+To ensure using C++ effectively, follow these principles:
 
 ✅ Use std::string methods such as .empty(), .length(), .substr(), etc., instead of manual character array manipulation.<br>
 ✅ Do not use string indexing to iterate through characters. Instead, use range-based for loops for better readability and safety.<br>
@@ -30,7 +30,7 @@ C++ concepts practiced:<br>
 ✅ Managing fixed-size arrays (without malloc/free)<br>
 
 ## Exercise 02: The Job Of Your Dreams (Optional)
-Recreate the missing Account.cpp file based on the provided Account.hpp and test files. Your goal is to pass all the tests while following C++ best practices.
+Recreate the missing Account.cpp file based on the provided Account.hpp and test files. The goal is to pass all the tests while following C++ best practices.
 
 # Result: 100%
 
