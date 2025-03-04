@@ -6,14 +6,26 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/04 10:30:04 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/04 11:10:14 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): _name("unNamed"), _grade(150) {
+Bureaucrat::Bureaucrat(): 
+						_name("unNamed"), _grade(150) {
 	std::cout << "Bureaucrat: Default constructor called" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(const std::string name, unsigned int grade): _name(name){
+	std::cout << "Bureaucrat: Constructor with name and grade called" << std::endl;
+	if (grade < 1) {
+		throw (GradeTooHighException());
+	} else if (grade > 150) {
+		throw (GradeTooLowException());
+	} else {
+		this->_grade = grade;
+	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other): 
@@ -33,18 +45,33 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 	return (*this);
 }
 
-const std::string	getName() const {
-	
+const std::string	Bureaucrat::getName() const {
+	return (this->_name);
 }
 
-int	getGrade() {
-	
+int	Bureaucrat::getGrade() const {
+	return (this->_grade);
 }
 
-void	gradeIncrement(int value) {
-
+void	Bureaucrat::gradeIncrement() {
+	if (this->_grade == 1) {
+		throw (GradeTooHighException());
+	}
+	else {
+		this->_grade--;
+	}
 }
 
-void	gradeDecrement(int value) {
-	
+void	Bureaucrat::gradeDecrement() {
+	if (this->_grade == 150) {
+		throw (GradeTooLowException());
+	}
+	else {
+		this->_grade++;
+	}
+}
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &source) {
+	out << source.getName() << ", bureaucrat grade " << source.getGrade();
+	return (out);
 }
