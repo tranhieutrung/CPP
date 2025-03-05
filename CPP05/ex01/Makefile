@@ -6,14 +6,15 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 09:34:37 by hitran            #+#    #+#              #
-#    Updated: 2025/03/05 13:39:13 by hitran           ###   ########.fr        #
+#    Updated: 2025/03/05 14:29:05 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Bureaucrat
+NAME 			= Form
 
 SRCS 			=	main.cpp \
-					Bureaucrat.cpp			
+					Bureaucrat.cpp	\
+					Form.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 

@@ -6,11 +6,12 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 13:41:52 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/05 15:04:21 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): 
 						_name("unNamed"), _grade(150) {
@@ -74,14 +75,18 @@ void	Bureaucrat::gradeDecrement() {
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-    return ("The grade is too high");
+    return ("Bureaucrat: The grade is too high");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-    return ("The grade is too low");
+    return ("Bureaucrat: The grade is too low");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &source) {
 	out << source.getName() << ", bureaucrat grade " << source.getGrade();
 	return (out);
+}
+
+void	Bureaucrat::signForm(Form &form) {
+	form.beSigned(*this);
 }
