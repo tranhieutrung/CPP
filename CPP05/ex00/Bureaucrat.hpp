@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:24 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/04 11:08:42 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/05 11:14:54 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
-# include "GradeTooHighException.hpp"
-# include "GradeTooLowException.hpp"
 
 class Bureaucrat
 {

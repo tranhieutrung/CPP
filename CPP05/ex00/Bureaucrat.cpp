@@ -6,18 +6,20 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/04 11:10:14 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/05 13:22:56 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
 
 Bureaucrat::Bureaucrat(): 
 						_name("unNamed"), _grade(150) {
 	std::cout << "Bureaucrat: Default constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, unsigned int grade): _name(name){
+Bureaucrat::Bureaucrat(const std::string name, unsigned int grade): _name(name) {
 	std::cout << "Bureaucrat: Constructor with name and grade called" << std::endl;
 	if (grade < 1) {
 		throw (GradeTooHighException());
@@ -54,7 +56,8 @@ int	Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::gradeIncrement() {
-	if (this->_grade == 1) {
+	std::cout << "Bureaucrat: gradeIncrement called" << std::endl;
+	if (this->_grade <= 1) {
 		throw (GradeTooHighException());
 	}
 	else {
@@ -63,7 +66,8 @@ void	Bureaucrat::gradeIncrement() {
 }
 
 void	Bureaucrat::gradeDecrement() {
-	if (this->_grade == 150) {
+	std::cout << "Bureaucrat: gradeDecrement called" << std::endl;
+	if (this->_grade >= 150) {
 		throw (GradeTooLowException());
 	}
 	else {
