@@ -6,13 +6,11 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:17 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 13:27:05 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/05 13:41:00 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
 
 int main()
 {

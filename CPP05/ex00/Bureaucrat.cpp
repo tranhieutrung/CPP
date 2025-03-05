@@ -6,13 +6,11 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 13:22:56 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/05 13:41:52 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
 
 Bureaucrat::Bureaucrat(): 
 						_name("unNamed"), _grade(150) {
@@ -73,6 +71,14 @@ void	Bureaucrat::gradeDecrement() {
 	else {
 		this->_grade++;
 	}
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+    return ("The grade is too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
+    return ("The grade is too low");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &source) {
