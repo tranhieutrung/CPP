@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:24 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 13:39:58 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 13:55:19 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class Bureaucrat
 		void				gradeIncrement();
 		void				gradeDecrement();
 		void				signForm(AForm &form);
+		void				executeForm(AForm &form);
 		
 	private:
 		const std::string	_name;

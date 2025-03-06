@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:01:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 13:48:48 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 15:09:53 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,27 @@ const std::string	ShrubberyCreationForm::getTarget() const {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	std::cout << "ShrubberyCreationForm: execute called" << std::endl;
 	if (!this->getSignedStatus()) {
 		throw (FormNotSignedException());
 	} else if (executor.getGrade() > this->getGradeToExecute()) {
-		throw (ExecuteGradeTooLowException());
+		throw (GradeTooLowException());
 	} else {
 		std::ofstream	outFile;
 		
 		outFile.open(this->_target + "_shrubbery");
 		if (outFile.fail()) {
-			throw std::runtime_error("Failed to open file for writing!");
+			throw std::runtime_error("ShrubberyCreationForm: Failed to open file for writing!");
 		} else {
-			outFile << "      A" << std::endl 
-					<< "     / \\" << std::endl 
-					<< "   B     C" << std::endl 
-					<< "  / \\  / \\" << std::endl 
-					<< " C   D E   F" << std::endl;
+			outFile << "      ccee88oo" << std::endl 
+					<< "   C8O8O8Q8PoOb o8oo" << std::endl 
+					<< " dOB69QO8PdUOpugoO9bD" << std::endl 
+					<< "CgggbU8OU qOp qOdoUOdcb" << std::endl 
+					<< "   6OuU  //p u gcoUodpP" << std::endl 
+					<< "      \\\\//  //douUP" << std::endl 
+					<< "       \\\\ //" << std::endl 
+					<< "        |||" << std::endl 
+					<< "        |||" << std::endl ;
 			outFile.close();
 			std::cout << this->_target << "_shrubbery is created" << std::endl; 
 		}
@@ -71,8 +76,4 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 
 const char *ShrubberyCreationForm::FormNotSignedException::what() const throw() {
     return ("ShrubberyCreationForm: The Form is not signed");
-}
-
-const char *ShrubberyCreationForm::ExecuteGradeTooLowException::what() const throw() {
-    return ("ShrubberyCreationForm: The execute grade is not high enough");
 }

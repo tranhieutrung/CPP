@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:01:38 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 13:48:55 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 15:02:51 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ class ShrubberyCreationForm: public AForm
 
 		class FormNotSignedException: public std::exception
 		{
-			public:
-				virtual const char *what() const throw();
-		};
-
-		class ExecuteGradeTooLowException: public std::exception {
 			public:
 				virtual const char *what() const throw();
 		};
