@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 14:49:36 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 10:26:10 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Form
 		int					getGradeToSign() const;
 		int					getGradeToExecute() const;
 		bool				getSignedStatus() const;
-		void				beSigned(Bureaucrat &bureaucrat);
+		bool				beSigned(Bureaucrat &bureaucrat);
 	
 	private:
 		const std::string	_name;

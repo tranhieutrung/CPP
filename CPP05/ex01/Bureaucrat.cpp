@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 15:04:21 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 10:35:57 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): 
-						_name("unNamed"), _grade(150) {
+						_name("unNamedBureaucrat"), _grade(150) {
 	std::cout << "Bureaucrat: Default constructor called" << std::endl;
 }
 
@@ -88,5 +88,14 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &source) {
 }
 
 void	Bureaucrat::signForm(Form &form) {
-	form.beSigned(*this);
+	if (form.beSigned(*this)) {
+		std::cout << this->_name << "  signed " << form.getName();
+	} else if (form.getSignedStatus()) {
+		std::cout << this->_name << "  couldn’t sign " 
+			<< form.getName() << " because it has already signed";
+	} else {
+		std::cout << this->_name << "  couldn’t sign " 
+			<< form.getName() << " because their grade is not high enough.";
+	}
+	std::cout << std::endl;
 }

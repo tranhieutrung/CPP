@@ -6,14 +6,14 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 15:19:01 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 10:35:48 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form(): 
-						_name("unNamed"),
+						_name("unNamedForm"),
 						_signed(false),
 						_gradeToSign(150),
 						_gradeToExecute(150) {
@@ -64,17 +64,14 @@ bool	Form::getSignedStatus() const {
 	return (this->_signed);
 }
 
-void Form::beSigned(Bureaucrat &bureaucrat){
+bool Form::beSigned(Bureaucrat &bureaucrat){
 	if (this->_signed) {
-		std::cout << bureaucrat.getName() << "  couldn’t sign " 
-			<< this->_name << " because it has already signed" <<std::endl;
+		return (false);
 	} else if (bureaucrat.getGrade() <= this->_gradeToSign) {
-		std::cout << bureaucrat.getName() << "  signed " 
-			<< this->_name <<std::endl;
 		this->_signed = true;
+		return (true);
 	} else {
-		std::cout << bureaucrat.getName() << "  couldn’t sign " 
-			<< this->_name << " because their grade is not high enough." <<std::endl;
+		return (false);
 	}
 }
 
