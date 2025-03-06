@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 13:11:33 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 13:25:40 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ void	Bureaucrat::signForm(Form &form) {
 			std::cout << this->_name << "  couldn’t sign " 
 				<< form.getName() << " because it has already signed";
 		}
+		std::cout << std::endl;
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << std::endl;
 }
