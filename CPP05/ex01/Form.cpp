@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 10:35:48 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 11:02:31 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@ Form::Form():
 	std::cout << "Form: Default constructor called" << std::endl;
 }
 
-Form::Form(const std::string name, bool status, const int gradeToSign, const int gradeToExecute):
+Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute):
 						_name(name),
-						_signed(status),
+						_signed(false),
 						_gradeToSign(gradeToSign),
 						_gradeToExecute(gradeToExecute)  {
 	std::cout << "Form: Constructor (with parameters) called" << std::endl;
+	if (gradeToSign < 1 || gradeToExecute < 1) {
+		throw (GradeTooHighException());
+	} else if (gradeToSign > 150 || gradeToExecute > 150) {
+		throw (GradeTooLowException());
+	}
 }
 
 Form::Form(const Form &other): 
