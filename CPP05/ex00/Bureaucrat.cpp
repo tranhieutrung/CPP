@@ -6,14 +6,14 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 13:41:52 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 10:36:00 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(): 
-						_name("unNamed"), _grade(150) {
+						_name("unNamedBureaucrat"), _grade(150) {
 	std::cout << "Bureaucrat: Default constructor called" << std::endl;
 }
 
