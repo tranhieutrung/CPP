@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 10:51:40 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 11:53:03 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Form
 	Form();
 	Form(const std::string name, const int gradeToSign, const int gradeToExecute);
 	Form(const Form &other);
-		virtual ~Form();
+	~Form();
 		
 		Form 			&operator=(const Form &other);
 		
