@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 10:35:57 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 13:11:33 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,15 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &source) {
 }
 
 void	Bureaucrat::signForm(Form &form) {
-	if (form.beSigned(*this)) {
-		std::cout << this->_name << "  signed " << form.getName();
-	} else if (form.getSignedStatus()) {
-		std::cout << this->_name << "  couldn’t sign " 
-			<< form.getName() << " because it has already signed";
-	} else {
-		std::cout << this->_name << "  couldn’t sign " 
-			<< form.getName() << " because their grade is not high enough.";
+	try {
+		if (form.beSigned(*this)) {
+			std::cout << this->_name << "  signed " << form.getName();
+		} else if (form.getSignedStatus()) {
+			std::cout << this->_name << "  couldn’t sign " 
+				<< form.getName() << " because it has already signed";
+		}
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 }

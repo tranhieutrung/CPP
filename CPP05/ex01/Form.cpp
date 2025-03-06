@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 11:02:31 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 13:07:03 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ bool Form::beSigned(Bureaucrat &bureaucrat){
 		this->_signed = true;
 		return (true);
 	} else {
-		return (false);
+		throw (GradeTooLowException());
 	}
 }
 

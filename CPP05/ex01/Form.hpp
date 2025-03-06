@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 11:53:03 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 11:58:08 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 class Form
 {
 	public:
-	Form();
-	Form(const std::string name, const int gradeToSign, const int gradeToExecute);
-	Form(const Form &other);
-	~Form();
+		Form();
+		Form(const std::string name, const int gradeToSign, const int gradeToExecute);
+		Form(const Form &other);
+		~Form();
 		
 		Form 			&operator=(const Form &other);
 		
