@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 10:36:00 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 15:26:12 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ void	Bureaucrat::gradeDecrement() {
 	std::cout << "Bureaucrat: gradeDecrement called" << std::endl;
 	if (this->_grade >= 150) {
 		throw (GradeTooLowException());
-	}
-	else {
+	} else {
 		this->_grade++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:01:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 15:09:53 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 15:24:46 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ const std::string	ShrubberyCreationForm::getTarget() const {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	std::cout << "ShrubberyCreationForm: execute called" << std::endl;
+	std::cout << "ShrubberyCreationForm: Execute called" << std::endl;
 	if (!this->getSignedStatus()) {
 		throw (FormNotSignedException());
 	} else if (executor.getGrade() > this->getGradeToExecute()) {
@@ -75,5 +75,9 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 }
 
 const char *ShrubberyCreationForm::FormNotSignedException::what() const throw() {
-    return ("ShrubberyCreationForm: The Form is not signed");
+	return ("the Form is not signed");
+}
+
+const char *ShrubberyCreationForm::GradeTooLowException::what() const throw() {
+    return ("the grade is not high enough");
 }
