@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:24 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/05 13:41:30 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/06 11:52:45 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(const std::string name, unsigned int grade);
 		Bureaucrat(const Bureaucrat &other);
-		virtual ~Bureaucrat();
+		~Bureaucrat();
 		
 		Bureaucrat 			&operator=(const Bureaucrat &other);
 		
