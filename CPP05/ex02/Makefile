@@ -6,7 +6,7 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 09:34:37 by hitran            #+#    #+#              #
-#    Updated: 2025/03/06 13:49:48 by hitran           ###   ########.fr        #
+#    Updated: 2025/03/07 12:15:35 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME 			= ExecuteForm
 SRCS 			=	main.cpp \
 					Bureaucrat.cpp	\
 					AForm.cpp \
-					ShrubberyCreationForm.cpp
+					ShrubberyCreationForm.cpp \
+					PresidentialPardonForm.cpp \
+					RobotomyRequestForm.cpp
 					
 
 OBJS			= $(SRCS:.cpp=.o)

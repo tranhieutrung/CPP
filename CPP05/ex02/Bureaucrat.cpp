@@ -6,12 +6,15 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 15:28:09 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/07 12:14:43 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 Bureaucrat::Bureaucrat(): 
 						_name("unNamedBureaucrat"), _grade(150) {
@@ -75,11 +78,11 @@ void	Bureaucrat::gradeDecrement() {
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-    return ("Bureaucrat: The grade is too high");
+	return ("Bureaucrat: The grade is too high");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-    return ("Bureaucrat: The grade is too low");
+	return ("Bureaucrat: The grade is too low");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &source) {
@@ -109,8 +112,17 @@ void	Bureaucrat::executeForm(AForm &form) {
 		form.execute(*this);
 		std::cout << this->_name << "  executed " << form.getName() << std::endl;
 	} catch (std::exception &e) {
-		std::cerr << this->_name << "  couldn’t execute " 
-		<< form.getName() << " because ";
-		std::cerr << e.what() << std::endl;
+		if (dynamic_cast<ShrubberyCreationForm*>(&form)) {
+			std::cerr << this->_name << " couldn’t execute " 
+			<< form.getName() << " because ";
+			std::cerr << e.what() << std::endl;
+		} else if (dynamic_cast<RobotomyRequestForm*>(&form)) {
+			std::cerr << "The robotomy "<< this->_name << " failed because ";
+			std::cerr << e.what() << std::endl;
+		} else if (dynamic_cast<PresidentialPardonForm*>(&form)) {
+			std::cerr << this->_name << " couldn’t pardon " 
+			<< form.getName() << " because ";
+			std::cerr << e.what() << std::endl;
+		}
 	}
 }

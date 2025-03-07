@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 13:32:51 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/07 12:15:47 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,14 @@ const char *AForm::GradeTooHighException::what() const throw() {
 
 const char *AForm::GradeTooLowException::what() const throw() {
     return ("AForm: The grade is too low");
+}
+
+const char *AForm::FormNotSignedException::what() const throw() {
+	return ("the form is not signed");
+}
+
+const char *AForm::GradeNotHighEnoughException::what() const throw() {
+	return ("the grade is not high enough");
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &source) {

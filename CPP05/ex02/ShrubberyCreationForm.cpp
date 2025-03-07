@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 12:01:44 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 15:24:46 by hitran           ###   ########.fr       */
+/*   Created: 2025/03/07 09:58:46 by hitran            #+#    #+#             */
+/*   Updated: 2025/03/07 11:50:57 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (!this->getSignedStatus()) {
 		throw (FormNotSignedException());
 	} else if (executor.getGrade() > this->getGradeToExecute()) {
-		throw (GradeTooLowException());
+		throw (GradeNotHighEnoughException());
 	} else {
 		std::ofstream	outFile;
 		
@@ -72,12 +72,4 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 			std::cout << this->_target << "_shrubbery is created" << std::endl; 
 		}
 	}
-}
-
-const char *ShrubberyCreationForm::FormNotSignedException::what() const throw() {
-	return ("the Form is not signed");
-}
-
-const char *ShrubberyCreationForm::GradeTooLowException::what() const throw() {
-    return ("the grade is not high enough");
 }

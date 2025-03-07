@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 13:49:13 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/07 12:06:04 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,17 @@ class AForm
 		};
 
 		class GradeTooLowException: public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class FormNotSignedException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class GradeNotHighEnoughException: public std::exception {
 			public:
 				virtual const char *what() const throw();
 		};
