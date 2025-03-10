@@ -13,19 +13,19 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm():
-						AForm("ShrubberyForm", 72, 45),
-						_target("ShrubberyTarget") {
+						AForm("RobotomyRequestForm", 72, 45),
+						_target("RobotomyRequest") {
 	std::cout << "RobotomyRequestForm: Default constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target):
-						AForm("ShrubberyForm", 72, 45),
+						AForm("RobotomyRequestForm", 72, 45),
 						_target(target) {
 	std::cout << "RobotomyRequestForm: Constructor (with target) called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): 
-						AForm("ShrubberyForm", 72, 45),
+						AForm("RobotomyRequestForm", 72, 45),
 						_target(other.getTarget()) {
 	std::cout << "RobotomyRequestForm: Copy constructor called" << std::endl;
 }
@@ -48,15 +48,6 @@ const std::string	RobotomyRequestForm::getTarget() const {
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	std::cout << "RobotomyRequestForm: Execute called" << std::endl;
-	if (!this->getSignedStatus()) {
-		std::cerr << "The robotomy failed because "; 
-		throw (FormNotSignedException());
-		std::cerr << std::endl;
-	} else if (executor.getGrade() > this->getGradeToExecute()) {
-		std::cerr << "The robotomy failed because "; 
-		throw (GradeNotHighEnoughException());
-		std::cerr << std::endl;
-	} else {
-		std::cout << this->_target << " has been robotomized successfully 50% of the time." << std::endl; 
-	}
+	checkRequirements(executor);
+	std::cout << this->_target << " has been robotomized successfully 50% of the time." << std::endl; 
 }

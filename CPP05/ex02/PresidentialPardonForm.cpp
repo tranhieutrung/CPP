@@ -13,19 +13,19 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm():
-						AForm("ShrubberyForm", 25, 5),
-						_target("ShrubberyTarget") {
+						AForm("PresidentialPardonForm", 25, 5),
+						_target("PresidentialPardon") {
 	std::cout << "PresidentialPardonForm: Default constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target):
-						AForm("ShrubberyForm", 25, 5),
+						AForm("PresidentialPardonForm", 25, 5),
 						_target(target) {
 	std::cout << "PresidentialPardonForm: Constructor (with target) called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other): 
-						AForm("ShrubberyForm", 25, 5),
+						AForm("PresidentialPardonForm", 25, 5),
 						_target(other.getTarget()) {
 	std::cout << "PresidentialPardonForm: Copy constructor called" << std::endl;
 }
@@ -48,11 +48,6 @@ const std::string	PresidentialPardonForm::getTarget() const {
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	std::cout << "PresidentialPardonForm: Execute called" << std::endl;
-	if (!this->getSignedStatus()) {
-		throw (FormNotSignedException());
-	} else if (executor.getGrade() > this->getGradeToExecute()) {
-		throw (GradeNotHighEnoughException());
-	} else {
-		std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl; 
-	}
+	checkRequirements(executor);
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl; 
 }
