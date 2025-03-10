@@ -35,13 +35,14 @@ class AForm
 				virtual const char *what() const throw();
 		};
 
-		class FormNotSignedException: public std::exception
+		class FormWasSignedException: public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
 
-		class GradeNotHighEnoughException: public std::exception {
+		class FormNotSignedException: public std::exception
+		{
 			public:
 				virtual const char *what() const throw();
 		};
@@ -50,7 +51,7 @@ class AForm
 		int					getGradeToSign() const;
 		int					getGradeToExecute() const;
 		bool				getSignedStatus() const;
-		bool				beSigned(Bureaucrat &bureaucrat);
+		void				beSigned(Bureaucrat &bureaucrat);
 		virtual void 		execute(Bureaucrat const & executor) const = 0;
 		
 	private:
@@ -58,6 +59,9 @@ class AForm
 		bool				_signed;
 		const unsigned int	_gradeToSign;
 		const unsigned int	_gradeToExecute;
+
+	protected:
+		void 				checkRequirements(Bureaucrat const & executor) const;
 };
 
 std::ostream &operator<<(std::ostream &out, const AForm &source);

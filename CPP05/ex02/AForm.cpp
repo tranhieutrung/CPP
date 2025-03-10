@@ -24,7 +24,7 @@ AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExe
 						_name(name),
 						_signed(false),
 						_gradeToSign(gradeToSign),
-						_gradeToExecute(gradeToExecute)  {
+						_gradeToExecute(gradeToExecute) {
 	std::cout << "AForm: Constructor (with parameters) called" << std::endl;
 	if (gradeToSign < 1 || gradeToExecute < 1) {
 		throw (GradeTooHighException());
@@ -69,36 +69,43 @@ bool	AForm::getSignedStatus() const {
 	return (this->_signed);
 }
 
-bool AForm::beSigned(Bureaucrat &bureaucrat){
+void AForm::beSigned(Bureaucrat &bureaucrat){
 	if (this->_signed) {
-		return (false);
+		throw (FormWasSignedException());
 	} else if (bureaucrat.getGrade() <= this->_gradeToSign) {
 		this->_signed = true;
-		return (true);
 	} else {
 		throw (GradeTooLowException());
 	}
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {
-    return ("AForm: The grade is too high");
+	return ("The grade is too high");
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
-    return ("AForm: The grade is too low");
+	return ("The grade is too low");
+}
+
+const char *AForm::FormWasSignedException::what() const throw() {
+	return ("The form has already been signed");
 }
 
 const char *AForm::FormNotSignedException::what() const throw() {
-	return ("the form is not signed");
+	return ("The form is not signed");
 }
 
-const char *AForm::GradeNotHighEnoughException::what() const throw() {
-	return ("the grade is not high enough");
+void	AForm::checkRequirements(Bureaucrat const & executor) const {
+	if (!this->getSignedStatus()) {
+		throw (FormNotSignedException());
+	} else if (executor.getGrade() > this->getGradeToExecute()) {
+		throw (GradeTooLowException());
+	}
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &source) {
 	out << source.getName() << ", grade to sign: " << source.getGradeToSign()
-		<<  ", grade to execute: " << source.getGradeToExecute() 
+		<< ", grade to execute: " << source.getGradeToExecute() 
 		<< " , status: " << (source.getSignedStatus() ? "signed" : "not signed");
 	return (out);
 }
