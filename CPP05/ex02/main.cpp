@@ -49,37 +49,79 @@ int main()
 	std::cout << std::endl << BLUE << "Junior tries to sign ShrubberyCreationForm: " << RESET << std::endl;
 	junior.signForm(*forms[0]);
 
-	std::cout << std::endl << BLUE << "4  Bureaucrat try to execute ShrubberyCreationForm: " << RESET << std::endl;
+	std::cout << std::endl << BLUE << "Senior tries to sign ShrubberyCreationForm: " << RESET << std::endl;
+	senior.signForm(*forms[0]);
+
+	std::cout << std::endl << BLUE << "Boss tries to sign ShrubberyCreationForm: " << RESET << std::endl;
+	boss.signForm(*forms[0]);
+	
+	std::cout << std::endl << BLUE << "4 Bureaucrat try to execute ShrubberyCreationForm: " << RESET << std::endl;
 	fresher.executeForm(*forms[0]);
 	junior.executeForm(*forms[0]);
 	senior.executeForm(*forms[0]);
 	boss.executeForm(*forms[0]);
 
-	// std::cout << std::endl << BLUE << "Test: sign then execute forms: " << RESET << std::endl;
-	// try {
-	// 	junior.signForm(*forms[0]);
-	// 	forms[0]->execute(junior);
-	// } catch (std::exception &e) {
-	// 	std::cerr << e.what() <<std::endl;
-	// }
 
-	// std::cout << std::endl << BLUE << "Test: decrease grade then execute forms: " << RESET << std::endl;
-	// try {
-	// 	junior.gradeDecrement();
-	// } catch (const std::exception &e) {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	// junior.executeForm(*forms[0]);
+	std::cout << std::endl << YELLOW << "Test2: excecuteForm(ShrubberyCreationForm): " << RESET << std::endl;
 
-	// std::cout << std::endl << BLUE << "Test: increase grade then execute forms: " << RESET << std::endl;
-	// try {
-	// 	junior.gradeIncrement();
-	// } catch (const std::exception &e) {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	// junior.executeForm(*forms[0]);
+	std::cout << std::endl << BLUE << "Fresher tries to sign ShrubberyCreationForm: " << RESET << std::endl;
+	fresher.signForm(*forms[0]);
+	
+	std::cout << std::endl << BLUE << "Junior tries to sign ShrubberyCreationForm: " << RESET << std::endl;
+	junior.signForm(*forms[0]);
 
-	// std::cout << std::endl << BLUE << "Test: RobotomyRequestForm" << RESET << std::endl;
+	std::cout << std::endl << BLUE << "Senior tries to sign ShrubberyCreationForm: " << RESET << std::endl;
+	senior.signForm(*forms[0]);
+
+	std::cout << std::endl << BLUE << "Boss tries to sign ShrubberyCreationForm: " << RESET << std::endl;
+	boss.signForm(*forms[0]);
+	
+	std::cout << std::endl << BLUE << "4 Bureaucrat try to execute ShrubberyCreationForm: " << RESET << std::endl;
+	fresher.executeForm(*forms[0]);
+	junior.executeForm(*forms[0]);
+	senior.executeForm(*forms[0]);
+	boss.executeForm(*forms[0]);
+
+	std::cout << std::endl << YELLOW << "Test3: excecuteForm(RobotomyRequestForm): " << RESET << std::endl;
+
+	std::cout << std::endl << BLUE << "Fresher tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	fresher.signForm(*forms[1]);
+	
+	std::cout << std::endl << BLUE << "Junior tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	junior.signForm(*forms[1]);
+
+	std::cout << std::endl << BLUE << "Senior tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	senior.signForm(*forms[1]);
+
+	std::cout << std::endl << BLUE << "Boss tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	boss.signForm(*forms[1]);
+	
+	std::cout << std::endl << BLUE << "4 Bureaucrat try to execute RobotomyRequestForm: " << RESET << std::endl;
+	fresher.executeForm(*forms[1]);
+	junior.executeForm(*forms[1]);
+	senior.executeForm(*forms[1]);
+	boss.executeForm(*forms[1]);
+
+
+	std::cout << std::endl << YELLOW << "Test4: excecuteForm(RobotomyRequestForm): " << RESET << std::endl;
+
+	std::cout << std::endl << BLUE << "Fresher tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	fresher.signForm(*forms[2]);
+	
+	std::cout << std::endl << BLUE << "Junior tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	junior.signForm(*forms[2]);
+
+	std::cout << std::endl << BLUE << "Senior tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	senior.signForm(*forms[2]);
+
+	std::cout << std::endl << BLUE << "Boss tries to sign RobotomyRequestForm: " << RESET << std::endl;
+	boss.signForm(*forms[2]);
+	
+	std::cout << std::endl << BLUE << "4 Bureaucrat try to execute RobotomyRequestForm: " << RESET << std::endl;
+	fresher.executeForm(*forms[2]);
+	junior.executeForm(*forms[2]);
+	senior.executeForm(*forms[2]);
+	boss.executeForm(*forms[2]);
 
 	std::cout << std::endl << RED << "Deconstructors:" << RESET << std::endl;
 	delete forms[0];

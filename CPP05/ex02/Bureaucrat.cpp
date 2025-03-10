@@ -92,25 +92,18 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &source) {
 
 void	Bureaucrat::signForm(AForm &form) {
 	try {
-		if (form.beSigned(*this)) {
-			std::cout << this->_name << "  signed " << form.getName();
-		} else if (form.getSignedStatus()) {
-			std::cout << this->_name << "  couldn’t sign " 
-				<< form.getName() << " because it has already signed";
-		}
-		std::cout << std::endl;
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-		std::cerr << this->_name << "  couldn’t sign " 
-		<< form.getName() << " because their grade is not high enough";
-		std::cout << std::endl;
+		std::cerr << this->_name << " couldn’t sign " 
+			<< form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
 void	Bureaucrat::executeForm(AForm &form) {
 	try {
 		form.execute(*this);
-		std::cout << this->_name << "  executed " << form.getName() << std::endl;
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	} catch (std::exception &e) {
 		if (dynamic_cast<ShrubberyCreationForm*>(&form)) {
 			std::cerr << this->_name << " couldn’t execute " 
