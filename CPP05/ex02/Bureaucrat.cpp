@@ -106,16 +106,12 @@ void	Bureaucrat::executeForm(AForm &form) {
 		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	} catch (std::exception &e) {
 		if (dynamic_cast<ShrubberyCreationForm*>(&form)) {
-			std::cerr << this->_name << " couldn’t execute " 
-			<< form.getName() << " because ";
-			std::cerr << e.what() << std::endl;
+			std::cerr << this->_name << " couldn’t execute " << form.getName();
 		} else if (dynamic_cast<RobotomyRequestForm*>(&form)) {
-			std::cerr << "The robotomy "<< this->_name << " failed because ";
-			std::cerr << e.what() << std::endl;
+			std::cerr << "The robotomy failed";
 		} else if (dynamic_cast<PresidentialPardonForm*>(&form)) {
-			std::cerr << this->_name << " couldn’t pardon " 
-			<< form.getName() << " because ";
-			std::cerr << e.what() << std::endl;
+			std::cerr << this->_name << " couldn’t pardon " << form.getName();
 		}
+		std::cerr << " because " << e.what() << std::endl;
 	}
 }
