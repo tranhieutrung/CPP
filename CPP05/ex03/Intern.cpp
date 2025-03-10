@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:29 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/10 11:39:09 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/10 12:20:07 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ AForm *Intern::makeForm(std::string name, const std::string target) {
 
 	for (int i = 0; i < 3; i++) {
 		if (name == formNames[i]) {
-			std::cout << "Intern creates " << name << std::endl;
+			std::cout << "Intern creates " << name << " form" << std::endl;
 			return (formCreator[i](target));
 		}
 	}
