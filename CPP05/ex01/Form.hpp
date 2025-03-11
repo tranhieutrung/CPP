@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:44:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/06 11:58:08 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/11 09:42:36 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,17 @@ class Form
 				virtual const char *what() const throw();
 		};
 
+		class FormWasSignedException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
 		const std::string	getName() const;
 		int					getGradeToSign() const;
 		int					getGradeToExecute() const;
 		bool				getSignedStatus() const;
-		bool				beSigned(Bureaucrat &bureaucrat);
+		void				beSigned(Bureaucrat &bureaucrat);
 	
 	private:
 		const std::string	_name;

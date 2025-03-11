@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:34:17 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/07 09:54:55 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/11 09:48:46 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int main()
 	std::cout  << YELLOW << "Form2's information after being signed by bur2: " << RESET << std::endl;
 	std::cout << form2 << std::endl;
 
-	std::cout << std::endl << BLUE << "Form2: Test beSigned only: " << RESET << std::endl;
+	std::cout << std::endl << BLUE << "Form3: Test beSigned only: " << RESET << std::endl;
 	std::cout << GREEN << "Form3's Constructors: " << RESET << std::endl;
 	Form		form3("Form3", 50, 50);
 	std::cout << GREEN << "Form3's information: " << RESET  << std::endl;
