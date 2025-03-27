@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/26 14:31:53 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/27 15:45:25 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>
+# include <iomanip>
 
 class ScalarConverter
 {
 	public:
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &other);
-		~ScalarConverter();
-		
-		ScalarConverter 			&operator=(const ScalarConverter &other);
-		
-		void convert(const std::string str);
+		static void convert(const std::string str);
 	
 	private:
-
+		ScalarConverter() = delete;
+		ScalarConverter(const ScalarConverter &other) = delete;
+		~ScalarConverter() = delete;
+		
+		ScalarConverter &operator=(const ScalarConverter &other) = delete;
 };

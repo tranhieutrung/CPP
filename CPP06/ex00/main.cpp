@@ -6,19 +6,18 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/26 14:32:20 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/27 13:57:35 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-#define GREEN "\033[32m"
-#define RED "\033[31m"
-#define YELLOW "\033[33m"
-#define BLUE "\033[34m"
-#define RESET "\033[0m"
-
-int main()
-{
+int main(int ac, char **av) {
+	if (ac != 2) {
+		std::cerr << "Error: Invalid number of arguments!" << std::endl;
+	}
+	std::string input = av[1];
+	ScalarConverter::convert(input);
+	
 	return (0);
 }
