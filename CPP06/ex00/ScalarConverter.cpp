@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:36 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/27 15:47:10 by hitran           ###   ########.fr       */
+/*   Updated: 2025/03/28 10:41:50 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,17 @@ bool isChar(const std::string s) {
 }
 
 bool isChar(int intNum, float floatNum, double doubleNum) {
+	double check;
 	return intNum >= 0 && intNum <= 127 && 
-			std::modf(floatNum, nullptr) == 0.0 && 
-			std::modf(doubleNum, nullptr) == 0.0;
+			std::modf(floatNum, &check) == 0.0 && 
+			std::modf(doubleNum, &check) == 0.0;
 }
 
 bool isInteger(bool isInt, float floatNum, double doubleNum) {
-	return 	isInt && 
-			std::modf(floatNum, nullptr) == 0.0 && 
-			std::modf(doubleNum, nullptr) == 0.0;
+	double check;
+	return 	isInt || 
+			(std::modf(floatNum, &check) == 0.0 && 
+			std::modf(doubleNum, &check) == 0.0);
 }
 
 void printChar(const char c) {
