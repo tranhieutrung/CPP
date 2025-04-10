@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/03/27 15:45:25 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/10 13:05:06 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string>
 # include <cmath>
 # include <iomanip>
+# include <regex>
+# include <cstdlib>
 
 class ScalarConverter
 {
@@ -29,3 +31,8 @@ class ScalarConverter
 		
 		ScalarConverter &operator=(const ScalarConverter &other) = delete;
 };
+
+bool isNumber(const std::string& s);
+bool isChar(const std::string& s);
+bool isPseudo(const std::string& s);
+bool isValid(const std::string& s);

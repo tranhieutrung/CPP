@@ -6,14 +6,15 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/03/26 14:32:27 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/10 12:31:20 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			=	convert
 
 SRCS 			=	main.cpp \
-					ScalarConverter.cpp			
+					ScalarConverter.cpp		\
+					utils.cpp	
 
 OBJS			=	$(SRCS:.cpp=.o)
 
