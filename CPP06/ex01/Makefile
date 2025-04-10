@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/04/10 14:31:58 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/10 14:50:29 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			=	convert
+NAME 			=	serializer
 
 SRCS 			=	main.cpp \
 					Serializer.cpp
