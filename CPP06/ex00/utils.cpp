@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:31:06 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/10 13:51:06 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/11 16:03:14 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool isNumber(const std::string& s) {
 	std::regex numberPattern(R"(^[-+]?\d+(\.\d+)?[f]?$)");
-	return std::regex_match(s, numberPattern);
+	return (std::regex_match(s, numberPattern));
 }
 
 bool isChar(const std::string& s) {
@@ -26,6 +26,16 @@ bool isPseudo(const std::string& s) {
 			|| s == "-inf" || s == "+inf" || s == "nan");
 }
 
-bool isValid(const std::string& s) {
-	return (isChar(s) || isNumber(s) || isPseudo(s));
+bool isInteger(const std::string& s) {
+	size_t dotPos = s.find('.');
+	if (dotPos == std::string::npos) {
+		return (true);
+	}
+
+	std::string frac = s.substr(dotPos + 1);
+	if (!frac.empty() && frac.back() == 'f') {
+		frac.pop_back();
+	}
+		
+	return (frac.find_first_not_of('0') == std::string::npos);
 }

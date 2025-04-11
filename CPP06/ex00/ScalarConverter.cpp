@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 14:32:36 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/10 13:42:28 by hitran           ###   ########.fr       */
+/*   Created: 2025/04/11 15:25:54 by hitran            #+#    #+#             */
+/*   Updated: 2025/04/11 15:57:08 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-void printPseudo(const std::string s) {
+void convertPseudo(const std::string s) {
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
 	if ((s == "-inff" || s == "+inff" || s == "nanf")) {
@@ -24,7 +24,7 @@ void printPseudo(const std::string s) {
 	}
 }
 
-void printChar(const char c) {
+void convertChar(const char c) {
 	if (isprint(c)) {
 		std::cout << "char: '" << c << "'" << std::endl;
 	} else {
@@ -35,59 +35,49 @@ void printChar(const char c) {
 	std::cout << "double: " << static_cast<double>(c) << std::endl;
 }
 
+void convertNum(const std::string s) {
+	try {
+		int intNum = std::stoi(s.c_str());
+
+		if (!isInteger(s) || !isascii(intNum)) {
+			std::cout << "char: impossible" << std::endl;
+		} else if (isprint(intNum)) {
+			std::cout << "char: '" << static_cast<char>(intNum) << "'" << std::endl;
+		} else {
+			std::cout << "char: Non displayable" << std::endl;
+		}
+		std::cout << "int: " << intNum << std::endl;
+	} catch (const std::exception&) {
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+	}
+
+	try {
+		float floatNum = std::stof(s.c_str());
+		std::cout << "float: " << std::fixed << std::setprecision(1) << floatNum << "f" << std::endl;
+	} catch (const std::exception&) {
+		std::cout << "float: impossible" << std::endl;
+	}
+
+	try {
+		double doubleNum = std::stod(s.c_str());
+		std::cout << "double: " << std::fixed << std::setprecision(1) << doubleNum << std::endl;
+	} catch (const std::exception&) {
+		std::cout << "double: impossible" << std::endl;
+	}
+}
+
 void ScalarConverter::convert(const std::string s) {
-    if (!isValid(s)) {
-        std::cerr << "Error: Invalid input" << std::endl;
-        return;
-    } else if (isChar(s)) {
-        printChar(s[0]);
-        return;
-    } else if (isPseudo(s)) {
-        printPseudo(s);
-        return;
-    }
-
-    // Print char and int conversion
-    try {
-        int intValue = std::stoi(s.c_str());
-        if (isprint(intValue)) {
-            std::cout << "char: '" << static_cast<char>(intValue) << "'" << std::endl;
-        } else if (isascii(intValue)) {
-            std::cout << "char: Non displayable" << std::endl;
-        } else {
-            std::cout << "char: impossible" << std::endl;
-        }
-        std::cout << "int: " << intValue << std::endl;
-    } catch (const std::exception &e) {
-        std::cout << "char: impossible" << std::endl;
-        std::cout << "int: impossible" << std::endl;
-    }
-
-    // Print float conversion
-    try {
-        float floatValue = std::stof(s.c_str());
-
-        // Check if float overflows
-        if (floatValue > std::numeric_limits<float>::max() || floatValue < std::numeric_limits<float>::lowest()) {
-            std::cout << "float: impossible" << std::endl;
-        } else {
-            std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
-        }
-    } catch (const std::exception &e) {
-        std::cout << "float: impossible" << std::endl;
-    }
-
-    // Print double conversion
-    try {
-        double doubleValue = std::stod(s.c_str());
-
-        // Check if double overflows
-        if (doubleValue > std::numeric_limits<double>::max() || doubleValue < std::numeric_limits<double>::lowest()) {
-            std::cout << "double: impossible" << std::endl;
-        } else {
-            std::cout << "double: " << doubleValue << std::endl;
-        }
-    } catch (const std::exception &e) {
-        std::cout << "double: impossible" << std::endl;
-    }
+	if (isPseudo(s)) {
+		convertPseudo(s);
+	} else if (isChar(s)) {
+		convertChar(s[0]);
+	} else if (isNumber(s)) {
+		convertNum(s);
+	} else {
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+	}
 }
