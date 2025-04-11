@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/10 15:01:30 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/11 12:58:25 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 
 class Base
 {
