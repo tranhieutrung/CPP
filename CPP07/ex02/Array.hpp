@@ -6,14 +6,13 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/14 14:28:27 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/14 14:36:21 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include <iostream>
-# include <string>
+# include <stdexcept>
 
 template <class T>
 class Array
@@ -24,7 +23,12 @@ class Array
 		Array(const Array<T> &other);
 		Array<T> &operator=(const Array<T> &other);
 
+		T &operator[](const unsigned int index);
+		unsigned int size();
+		
 	private:
+		T*				_array;
+		unsigned int	_size;
 	
 };
 
