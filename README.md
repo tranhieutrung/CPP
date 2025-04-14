@@ -29,6 +29,8 @@ This project is a structured introduction to Object-Oriented Programming (OOP) i
 - Practice more advanced operator overloading and exception safety. <br>
 [**CPP05**](https://github.com/tranhieutrung/CPP/tree/main/CPP05)
 ## 📌 CPP06 - Casts & Type Conversions
+- Learn and apply the C++ casting operators: static_cast, dynamic_cast, and reinterpret_cast.
+- Understand the difference between compile-time and runtime casting, and the risks of unsafe casts.[**CPP06**](https://github.com/tranhieutrung/CPP/tree/main/CPP06)
 
 ## 📌 CPP07 - Templates & Generic Programming
 
