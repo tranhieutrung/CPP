@@ -6,13 +6,14 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/14 11:46:21 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/14 14:09:15 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include <iostream>
+# include <string>
 
 template <typename T> void swap(T &para1, T &para2) {
 	T tmp = para1;
