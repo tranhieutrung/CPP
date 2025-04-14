@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/14 15:00:34 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/14 15:09:12 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,21 @@ Array<T> &Array<T>::operator=(const Array<T>& other) {
 	}
 	return *this;
 }
-	
+
+template <class T>
+Array<T>::~Array() {
+	delete[] this->_array;
+}
+
+template <class T>
+T &Array<T>::operator[](const unsigned int n) {
+	if (this->_size <= n) {
+		throw std::runtime_error("Out of bounds");
+	}
+	return this->_array[n];
+}
+
+template <class T>
+unsigned int Array<T>::size() {
+	return this->_size;
+}
