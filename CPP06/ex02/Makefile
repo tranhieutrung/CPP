@@ -6,14 +6,14 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/04/10 15:00:20 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/14 10:09:58 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			=	Identifier
+NAME 			=	identifier
 
 SRCS 			=	main.cpp \
-					Base.cpp
+					classes.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
