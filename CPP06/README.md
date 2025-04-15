@@ -8,14 +8,6 @@ This module introduces C++ type casting techniques and reinforces understanding 
 - const_cast<T>(expr): Adds or removes const or volatile qualifiers. Useful for low-level const-correctness manipulations.
 - reinterpret_cast<T>(expr): Reinterprets the bit pattern of a type as another type. It's low-level and should be used with extreme care (e.g., casting a pointer to an integer).
 
-Why Use These Instead of C-Style Casts?
-C++ casts:
-
-Are more explicit and safer.
-
-Help the compiler detect incorrect or dangerous conversions.
-
-Make your intent clearer to others reading your code.
 # Exercises
 ## Exercise 00: Conversion of Scalar Types
 - Implement a ScalarConverter class with:

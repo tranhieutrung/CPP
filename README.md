@@ -5,12 +5,11 @@ This project is a structured introduction to Object-Oriented Programming (OOP) i
 # Modules Overview
 ## 📌 CPP00 - Basics of C++ & First Steps in OOP
 - Introduction to C++ syntax, I/O streams, and string manipulation.
-- Learn to use classes properly, work with std::string, and avoid C-style coding practices.
-- Exercises: Implement a Megaphone program, build a simple PhoneBook, and optionally complete a missing class file. <br>
+- Learn to use classes properly, work with std::string, and avoid C-style coding practices. <br>
 [**CPP00**](https://github.com/tranhieutrung/CPP/tree/main/CPP00)
 ## 📌 CPP01 - Memory Allocation & References
 - Learn pointers, references, and dynamic memory allocation in C++.
-- Exercises: Implement a Zombie class, manage dynamic memory allocation, and explore stack vs heap memory. <br>
+- Implement a Zombie class, manage dynamic memory allocation, and explore stack vs heap memory. <br>
 [**CPP01**](https://github.com/tranhieutrung/CPP/tree/main/CPP01)
 ## 📌 CPP02 - Operator Overloading & Fixed-Point Numbers
 - Learn Orthodox Canonical Form (OCF) and operator overloading.
@@ -30,10 +29,13 @@ This project is a structured introduction to Object-Oriented Programming (OOP) i
 [**CPP05**](https://github.com/tranhieutrung/CPP/tree/main/CPP05)
 ## 📌 CPP06 - Casts & Type Conversions
 - Learn and apply the C++ casting operators: static_cast, dynamic_cast, and reinterpret_cast.
-- Understand the difference between compile-time and runtime casting, and the risks of unsafe casts.[**CPP06**](https://github.com/tranhieutrung/CPP/tree/main/CPP06)
+- Understand the difference between compile-time and runtime casting, and the risks of unsafe casts. <br>[**CPP06**](https://github.com/tranhieutrung/CPP/tree/main/CPP06)
 
 ## 📌 CPP07 - Templates & Generic Programming
-
+- Learn the power of templates in C++ to write generic and reusable code.
+- Understand the difference between function templates and class templates.
+- Learn how to separate template definitions between header and source files properly. <br>
+[**CPP07**](https://github.com/tranhieutrung/CPP/tree/main/CPP07)
 ## 📌 CPP08 - Standard Template Library (STL)
 
 ## 📌 CPP09 - Data Structures & Algorithmic Thinking
