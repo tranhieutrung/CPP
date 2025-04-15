@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/04/14 11:34:57 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/14 15:09:41 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			=	function_templates
+NAME 			=	templates
 
 SRCS 			=	main.cpp
 
