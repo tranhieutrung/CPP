@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/14 15:03:20 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/15 10:08:29 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # include <stdexcept>
 
-template <class T>
+template <typename T>
 class Array
 {
 	public:

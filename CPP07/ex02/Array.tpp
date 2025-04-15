@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/14 15:09:12 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/15 09:38:57 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 # include "Array.hpp"
 
-template <class T>
+template <typename T>
 Array<T>::Array(): _array(nullptr), _size(0) {}
 
-template <class T>
+template <typename T>
 Array<T>::Array(const unsigned int n): _array(new T[n]), _size(n) {}
 
-template <class T>
-Array<T>::Array(const Array<T>& other): _array(new T[other.size()]), _size(other.size()) {
+template <typename T>
+Array<T>::Array(const Array<T>& other): _array(new T[other._size]), _size(other._size) {
 	for (unsigned int index = 0; index < _size; index++) {
 		_array[index] = other._array[index];
 	}
 }
 
-template <class T>
+template <typename T>
 Array<T> &Array<T>::operator=(const Array<T>& other) {
-	if (this != other) {
+	if (this != &other) {
 		delete[] this->_array;
-		this->_size = other.size();
+		this->_size = other._size;
 		this->_array = new T[this->_size];
 		for (unsigned int index = 0; index < this->_size; index++) {
 			_array[index] = other._array[index];
@@ -40,12 +40,12 @@ Array<T> &Array<T>::operator=(const Array<T>& other) {
 	return *this;
 }
 
-template <class T>
+template <typename T>
 Array<T>::~Array() {
 	delete[] this->_array;
 }
 
-template <class T>
+template <typename T>
 T &Array<T>::operator[](const unsigned int n) {
 	if (this->_size <= n) {
 		throw std::runtime_error("Out of bounds");
@@ -53,7 +53,7 @@ T &Array<T>::operator[](const unsigned int n) {
 	return this->_array[n];
 }
 
-template <class T>
+template <typename T>
 unsigned int Array<T>::size() {
 	return this->_size;
 }
