@@ -6,11 +6,11 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/04/16 12:11:52 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/16 14:02:49 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			=	Span
+NAME 			=	MutantStack
 
 SRCS 			=	main.cpp
 
