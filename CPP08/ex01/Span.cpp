@@ -6,12 +6,11 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/15 14:52:14 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/16 11:07:32 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <iostream>
 
 Span::Span() {}
 
@@ -31,17 +30,31 @@ Span::~Span() {}
 
 void Span::addNumber(int num) {
 	if (this->_numList.size() >= this->_maxSize) {
-		throw std::runtime_error("exceed limit");
+		throw std::runtime_error("Exceed limit");
 	}
 	this->_numList.push_back(num);
 }
 
 unsigned int Span::shortestSpan() {
-	int res = 0;
+	if (this->_numList.size() <= 1) {
+		throw std::runtime_error("Need at least two numbers to compute distance.");
+	}
+	std::vector<int> sorted = this->_numList;
+	std::sort(sorted.begin(), sorted.end());
+	
+	unsigned int res = std::numeric_limits<unsigned int>::max();
+	for (size_t index = 1; index < sorted.size(); index++) {
+		unsigned int diff = sorted[index] - sorted[index - 1];
+		res = std::min(res, diff);
+	}
 	return (res);
 }
 
 unsigned int Span::longestSpan() {
-	int res = 0;
-	return (res);
+	if (this->_numList.size() <= 1) {
+		throw std::runtime_error("Need at least two numbers to compute distance.");
+	}
+	std::vector<int> sorted = this->_numList;
+	std::sort(sorted.begin(), sorted.end());
+	return (sorted.back() - sorted.front());
 }

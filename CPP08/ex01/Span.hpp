@@ -15,6 +15,7 @@
 # include <algorithm>
 # include <stdexcept>
 # include <vector>
+# include <limits>
 
 class Span
 {
