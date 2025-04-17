@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/16 11:07:32 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/17 10:45:14 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 Span::Span() {}
 
-Span::Span(unsigned int N): _maxSize(N), _numList() {}
+Span::Span(unsigned int N): _maxSize(N) {
+	_numList.reserve(N);
+}
 
 Span::Span(const Span &other): _maxSize(other._maxSize), _numList(other._numList) {}
 
@@ -54,7 +56,16 @@ unsigned int Span::longestSpan() {
 	if (this->_numList.size() <= 1) {
 		throw std::runtime_error("Need at least two numbers to compute distance.");
 	}
-	std::vector<int> sorted = this->_numList;
-	std::sort(sorted.begin(), sorted.end());
-	return (sorted.back() - sorted.front());
+	return (*std::max_element(this->_numList.begin(), this->_numList.end()) 
+			- *std::min_element(this->_numList.begin(), this->_numList.end()));
+}
+
+void Span::fillSpan(std::vector<int>::iterator otherBegin, std::vector<int>::iterator otherEnd) {
+	size_t otherSize = std::distance(otherBegin, otherEnd);
+	if (this->_numList.size() + otherSize > this->_maxSize) {
+		throw std::runtime_error("Exceed limit");
+	}
+	this->_numList.insert(this->_numList.end(), otherBegin, otherEnd);
+
+	std::vector<int>::iterator it = _numList
 }

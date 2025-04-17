@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:45:52 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/16 13:45:55 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/17 10:24:40 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Span
 		void addNumber(int num);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
+		void fillSpan(std::vector<int>::iterator otherBegin, 
+					std::vector<int>::iterator otherEnd);
 
 	private:
 		int					_maxSize;
