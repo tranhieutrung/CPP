@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/17 12:34:54 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/17 14:08:35 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int main(int ac, char **av) {
 
 	try {
 		BitcoinExchange btc;
-		btc.start(av[1]);
+		btc.loadPriceMap("data.csv");
+		btc.processInput(av[1]);
 	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 		return (EXIT_FAILURE);

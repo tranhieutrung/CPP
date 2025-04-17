@@ -6,13 +6,13 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/04/17 12:12:03 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/17 13:09:40 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			=	btc
 
-SRCS 			=	main.cpp Span.cpp
+SRCS 			=	main.cpp BitcoinExchange.cpp
 
 OBJS			=	$(SRCS:.cpp=.o)
 
