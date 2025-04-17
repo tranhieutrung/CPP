@@ -37,7 +37,9 @@ This project is a structured introduction to Object-Oriented Programming (OOP) i
 - Learn how to separate template definitions between header and source files properly. <br>
 [**CPP07**](https://github.com/tranhieutrung/CPP/tree/main/CPP07)
 ## 📌 CPP08 - Standard Template Library (STL)
-
+- Introduces STL containers (e.g., vector, stack) and standard algorithms.
+- Learn to write generic function templates and use STL iterators effectively. <br>
+[**CPP08**](https://github.com/tranhieutrung/CPP/tree/main/CPP08)
 ## 📌 CPP09 - Data Structures & Algorithmic Thinking
 
 # Conclusion
