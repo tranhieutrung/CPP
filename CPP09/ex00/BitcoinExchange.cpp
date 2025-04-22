@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/22 13:43:38 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/22 13:51:13 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@ void BitcoinExchange::processInput(std::string inputPath) {
 	std::string line;
 	getline(input, line);
 	while (getline(input, line)) {
+		if (line.empty()) {
+			continue;
+		}
 		size_t pos = line.find(" | ");
 		if (pos == std::string::npos) {
 			std::cerr << "Error: bad input => " + line << std::endl;
