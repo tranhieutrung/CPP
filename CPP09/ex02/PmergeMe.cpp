@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:12 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/24 13:32:35 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 22:59:21 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe &other) {}
+PmergeMe::PmergeMe(const PmergeMe &other) {
+	(void)other;
+}
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &other) {
+	(void)other;
 	return *this;
 }
 
