@@ -17,14 +17,62 @@ RPN::RPN() {}
 RPN::RPN(const RPN &other) {}
 
 RPN &RPN::operator=(const RPN &other) {
-	if (this != &other) {
-
-	}
 	return *this;
 }
 
 RPN::~RPN() {}
 
-void RPN::start(std::string infile) {
+void validateInput(std::string av) {
+	std::regex regex(R"(^[0-9 +\-*/]+$)");
+
+	if (std::regex_match(av, regex) == false) {
+		throw std::runtime_error("");
+	}
+}
+
+void	calculate(std::stack<int> &stack, char op) {
+	if (stack.size() < 2) {
+		throw std::runtime_error("");
+	}
 	
+	int tmp = stack.top();
+	stack.pop();
+	int res = 0;
+	if (op == '+') {
+		res = stack.top() + tmp;
+	} else if (op == '-') {
+		res = stack.top() - tmp;
+	} else if (op == '*') {
+		res = stack.top() * tmp;
+	} else if (op == '/' && tmp) {
+		res = stack.top() / tmp;
+	} else {
+		throw std::runtime_error("");
+	}
+	stack.pop();
+	stack.push(res);
+}
+
+void RPN::start(std::string av) {
+	validateInput(av);
+	
+	std::istringstream iss(av);
+	std::string token;
+	std::stack<int>	stack;
+
+	while (iss >> token) {
+		if (token.size() != 1) {
+			throw std::runtime_error("");
+		} else if (token[0] >= '0' && token[0] <= '9') {
+			stack.push(token[0] - 48);
+		} else {
+			calculate(stack, token[0]);
+		}
+	}
+
+	if (stack.size() == 1) {
+		std::cout << stack.top() << std::endl;
+	} else {
+		throw std::runtime_error("");
+	}	
 }

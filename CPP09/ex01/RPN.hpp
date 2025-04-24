@@ -15,7 +15,8 @@
 # include <iostream>
 # include <algorithm>
 # include <stdexcept>
-# include <vector>
+# include <stack>
+# include <regex>
 
 class RPN
 {
@@ -25,7 +26,7 @@ class RPN
 		RPN &operator=(const RPN &other);		
 		~RPN();
 
-		void start(std::string infile);
+		void start(std::string av);
 
 	private:
 

@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/17 13:04:28 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 12:53:01 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int main(int ac, char **av) {
 	if (ac != 2) {
-		std::cerr << "Error: invalid number of arguments!" << std::endl;
+		std::cerr << "Error" << std::endl;
 		return (EXIT_FAILURE);
 	}
 
 	try {
-		RPN btc;
-		btc.start(av[1]);
-	} catch (std::exception &e) {
-		std::cerr << "Error: " << e.what() << std::endl;
+		RPN rpn;
+		rpn.start(av[1]);
+	} catch (std::exception &) {
+		std::cerr << "Error" << std::endl;
 		return (EXIT_FAILURE);
 	}
 
