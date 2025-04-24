@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:31:06 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/11 16:03:14 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 23:09:28 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ bool isNumber(const std::string& s) {
 }
 
 bool isChar(const std::string& s) {
-	return (s.size() == 1 && (s[0] >= 0 && s[0] <= 127) && !std::isdigit(s[0]));
+	if (s.size() != 1)
+		return (false);
+
+	int ascii = static_cast<unsigned char>(s[0]);
+	return (ascii >= 0 && ascii <= 127 && !std::isdigit(ascii));
 }
 
 bool isPseudo(const std::string& s) {
