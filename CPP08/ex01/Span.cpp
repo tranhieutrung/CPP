@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/17 10:45:14 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 22:36:09 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,4 @@ void Span::fillSpan(std::vector<int>::iterator otherBegin, std::vector<int>::ite
 		throw std::runtime_error("Exceed limit");
 	}
 	this->_numList.insert(this->_numList.end(), otherBegin, otherEnd);
-
-	std::vector<int>::iterator it = _numList
 }

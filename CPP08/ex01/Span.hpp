@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:45:52 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/17 10:24:40 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 22:34:40 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Span
 					std::vector<int>::iterator otherEnd);
 
 	private:
-		int					_maxSize;
+		unsigned int		_maxSize;
 		std::vector<int>	_numList;
 
 };
