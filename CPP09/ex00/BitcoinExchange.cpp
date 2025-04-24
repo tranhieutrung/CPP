@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/24 09:54:02 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 22:42:47 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ const std::string parseDate(const std::string &date) {
 	return (date);
 }
 
-const double parseNumber(const std::string &  num, double limit) {
+double parseNumber(const std::string &  num, double limit) {
 	char *end;
 	double price = std::strtod(num.c_str(), &end);
 
@@ -51,7 +51,7 @@ const double parseNumber(const std::string &  num, double limit) {
 		throw (std::runtime_error("not a valid number."));
 	} else if (price < 0) {
 		throw (std::runtime_error("not a positive number."));
-	} else if (price < 0 || price > limit) {
+	} else if (price > limit) {
 		throw (std::runtime_error("too large a number."));
 	}
 	return (price);

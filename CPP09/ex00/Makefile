@@ -6,7 +6,7 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/04/17 13:09:40 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/24 22:38:55 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,14 @@ OBJS			=	$(SRCS:.cpp=.o)
 RM				=	rm -rf
 
 # Compiler and flags
-CC 				=	g++
+CC 				=	c++
 CFLAGS 			=	-Wall -Wextra -Werror -std=c++20 -I .
 
 # Targets
 all: $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
