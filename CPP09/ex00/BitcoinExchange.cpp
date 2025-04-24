@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/22 13:51:13 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 09:54:02 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ const std::string parseDate(const std::string &date) {
 
 	struct tm check = tm;
 
-	time_t rawtime = mktime(&check); //mktime normalizes the date to the correct date
+	time_t rawtime = mktime(&check); //mktime normalizes the date to the valid date
 	if (rawtime == -1 || check.tm_mday != tm.tm_mday
 	 || check.tm_mon != tm.tm_mon || check.tm_year != tm.tm_year) {
 		throw std::runtime_error("bad input => " + date);
@@ -57,17 +57,12 @@ const double parseNumber(const std::string &  num, double limit) {
 	return (price);
 }
 
-// #include <iomanip> //setprecision
-// void printPice(std::map<std::string, double>map) {
-// 	//print price
-// 	std::cout << "date,exchange_rate" << std::endl;
-// 	for (auto &pair : map) {
-// 		std::cout << pair.first << "," << std::fixed << std::setprecision(2) << pair.second <<std::endl;
-// 	}
-// }
-
 void BitcoinExchange::loadPriceMap(std::string dataPath) {
 	std::ifstream database(dataPath);
+	if (!database.is_open()) {
+		throw (std::runtime_error("cannot open file => " + dataPath));
+	}
+
 	std::string line;
 	getline(database, line);
 	while (getline(database, line)) {
@@ -78,14 +73,13 @@ void BitcoinExchange::loadPriceMap(std::string dataPath) {
 		this->_priceMap.emplace(parseDate(line.substr(0, pos)),
 								parseNumber(line.substr(pos + 1), 1000000));
 	}
-	// printPice(this->_priceMap);
 }
 
 double BitcoinExchange::searchPrice(std::string date) {
 	std::map<std::string, double>::iterator it = this->_priceMap.upper_bound(parseDate(date));
 	
 	if (it == this->_priceMap.begin()) {
-		throw (std::runtime_error("no data."));
+		throw (std::runtime_error("no available price data before or on " + date));
 	}
 	--it;
 	return (it->second);
@@ -93,6 +87,9 @@ double BitcoinExchange::searchPrice(std::string date) {
 
 void BitcoinExchange::processInput(std::string inputPath) {
 	std::fstream input(inputPath);
+	if (!input.is_open()) {
+		throw (std::runtime_error("cannot open file => " + inputPath));
+	}
 	std::string line;
 	getline(input, line);
 	while (getline(input, line)) {
