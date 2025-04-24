@@ -30,22 +30,33 @@ void validateInput(std::string av) {
 	}
 }
 
-void	calculate(std::stack<int> &stack, char op) {
+void	checkOverflow(unsigned int num1, unsigned int num2) {
+	if (num1 != num2) {
+		std::cerr << "⚠️  Warning: overflow detected" << std::endl;
+	}
+}
+
+void	calculate(std::stack<unsigned int> &stack, char op) {
 	if (stack.size() < 2) {
 		throw std::runtime_error("");
 	}
 	
-	int tmp = stack.top();
+	unsigned int tmp = stack.top();
 	stack.pop();
-	int res = 0;
+	unsigned int res = 0;
+	
 	if (op == '+') {
 		res = stack.top() + tmp;
+		checkOverflow(res - tmp, stack.top());
 	} else if (op == '-') {
 		res = stack.top() - tmp;
+		checkOverflow(res + tmp, stack.top());
 	} else if (op == '*') {
 		res = stack.top() * tmp;
+		checkOverflow(res / tmp, stack.top());
 	} else if (op == '/' && tmp) {
 		res = stack.top() / tmp;
+		checkOverflow(res * tmp, stack.top());
 	} else {
 		throw std::runtime_error("");
 	}
@@ -58,7 +69,7 @@ void RPN::start(std::string av) {
 	
 	std::istringstream iss(av);
 	std::string token;
-	std::stack<int>	stack;
+	std::stack<unsigned int>	stack;
 
 	while (iss >> token) {
 		if (token.size() != 1) {
