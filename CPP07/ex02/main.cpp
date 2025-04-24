@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/15 10:07:24 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/24 22:26:10 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ template <typename T>
 void printValue(Array<T> &a1, Array<T> &a2, Array<T> &a3, unsigned int len) {
 	std::cout << "array 1(" << a1.size() << ")\tarray 2(";
 	std::cout << a2.size() << ")\tarray 3(" << a3.size()<< ")" << std::endl;
-	for (int i = 0; i < len; i++) {
+	for (unsigned int i = 0; i < len; i++) {
 		try {
 			std::cout << a1[i] << "\t\t" << a2[i] << "\t\t" <<a3[i] << std::endl;
 		} catch (const std::exception &e) {
