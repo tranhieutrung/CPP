@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/17 10:40:24 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/25 10:55:51 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ int main() {
 	Span newSpan(10);
 	std::vector<int> other = {0, 16841, 8, 5486, -61684};
 	try {
-		newSpan.fillSpan(other.begin(),other.end());
+		newSpan.addNumber(other.begin(),other.end());
 		std::cout << "Filled 1 time" << std::endl;
-		newSpan.fillSpan(other.begin(),other.end());
+		newSpan.addNumber(other.begin(),other.end());
 		std::cout << "Filled 2 times" << std::endl;
-		newSpan.fillSpan(other.begin(),other.end());
+		newSpan.addNumber(other.begin(),other.end());
 		std::cout << "Filled 3 times" << std::endl;
 	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;

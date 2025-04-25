@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/24 22:36:09 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/25 10:54:10 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ unsigned int Span::longestSpan() {
 			- *std::min_element(this->_numList.begin(), this->_numList.end()));
 }
 
-void Span::fillSpan(std::vector<int>::iterator otherBegin, std::vector<int>::iterator otherEnd) {
+void Span::addNumber(std::vector<int>::iterator otherBegin, std::vector<int>::iterator otherEnd) {
 	size_t otherSize = std::distance(otherBegin, otherEnd);
 	if (this->_numList.size() + otherSize > this->_maxSize) {
 		throw std::runtime_error("Exceed limit");
