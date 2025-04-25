@@ -6,7 +6,7 @@
 #    By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 14:32:25 by hitran            #+#    #+#              #
-#    Updated: 2025/04/24 22:25:23 by hitran           ###   ########.fr        #
+#    Updated: 2025/04/25 10:22:05 by hitran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM				=	rm -rf
 
 # Compiler and flags
 CC 				=	c++
-CFLAGS 			=	-Wall -Wextra -Werror -std=c++20 -I .
+CFLAGS 			=	-Wall -Wextra -Werror -std=c++98 -I .
 
 # Targets
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:26:39 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/15 09:38:57 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/25 10:25:47 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "Array.hpp"
 
 template <typename T>
-Array<T>::Array(): _array(nullptr), _size(0) {}
+Array<T>::Array(): _array(NULL), _size(0) {}
 
 template <typename T>
 Array<T>::Array(const unsigned int n): _array(new T[n]), _size(n) {}

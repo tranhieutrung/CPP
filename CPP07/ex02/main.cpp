@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/24 22:26:10 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/25 10:34:51 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,34 +37,47 @@ int main( void ) {
 	Array<int> a3(a2);
 	a1 = a2;
 	
-	std::cout << "Try to modify values:" << std::endl;
 	try {
+		std::cout << "Try to modify a3[2] = -1: ";
 		a3[2] = -1;
+		std::cout << "OK" << std::endl;
+		
+		std::cout << "Try to modify a1[3] = 10: ";
 		a1[3] = 10;
+		std::cout << "OK" << std::endl;
+		
+		std::cout << "Try to modify a1[6] = a2[0]: ";
 		a1[6] = a2[0];
+		std::cout << "OK" << std::endl;
+		
 	} catch (const std::exception &e) {
 		std::cout << "Error: " << e.what() << std::endl;
 	}
-	std::cout << "Print values:" << std::endl;
+
+	std::cout << std::endl << "Print values:" << std::endl;
 	printValue(a1, a2, a3, 6);
 
 	std::cout << std::endl << "Test2: array of strings" << std::endl;
 	Array<std::string> b1;
 	Array<std::string> b2(5);
 	for (int i = 0; i < 5; i++) {
-		b2[i] = "string" + std::to_string(i + 1);
+		b2[i] = "string";
 	}
 	Array<std::string> b3(b2);
 	b1 = b2;
 
-	std::cout << "Try to modify values:" << std::endl;
 	try {
+		std::cout << "Try to modify b3[2] = \"New string\": ";
 		b3[2] = "New string";
+		std::cout << "OK" << std::endl;
+		std::cout << "Try to modify b2[6] = \"Out of range\": ";
 		b2[6] = "Out of range";
+		std::cout << "OK" << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << "Error: " << e.what() << std::endl;
 	}
-	std::cout << "Print values:" << std::endl;
+	
+	std::cout << std::endl << "Print values:" << std::endl;
 	printValue(b1, b2, b3, 6);
 
 	return 0;
