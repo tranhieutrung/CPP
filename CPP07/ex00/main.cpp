@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/25 10:08:10 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/25 10:14:16 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int main(void)
 	std::cout << "max(c, d) = " << ::max( c, d ) << std::endl;
 
 	// Test 2:
-	std::cout << std::endl << "Test 1: " << std::endl;
+	std::cout << std::endl << "Test 2: " << std::endl;
 
 	Awesome e(2), f(4);
 
