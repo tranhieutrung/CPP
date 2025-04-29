@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:12 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/29 11:06:21 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/29 14:02:05 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,26 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &other) {
 
 PmergeMe::~PmergeMe() {}
 
+void printSequence(std::string ms, std::list<int> list) {
+	std::cout 	<< ms;
+	int iter = 0;
+	for (std::list<int>::iterator it = list.begin(); it != list.end(); ++it) {
+		iter++;
+		if (iter <= 4 || list.size() == 5) {
+			std::cout << " " << *it;
+		} else {
+			std::cout << " [...]";
+			break;
+		}
+	}
+	std::cout << std::endl;
+}
+
+void printTime(std::string container, size_t size, auto time) {
+	std::cout 	<< "Time to process a range of " << size
+				<< " elements with std::" << container << " : " << time << " us" << std::endl;
+}
+
 void PmergeMe::start() {
 	// Sorting list
 	auto start = std::chrono::high_resolution_clock::now();
@@ -33,7 +53,7 @@ void PmergeMe::start() {
 	std::list<int>sortedList = this->sortList();
 
 	auto end = std::chrono::high_resolution_clock::now();
-	auto listSortingTime = end - start;
+	auto listSortingTime = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
 	// Sorting vector
 	start = std::chrono::high_resolution_clock::now();
@@ -41,7 +61,12 @@ void PmergeMe::start() {
 	std::vector<int>sortedVector = this->sortVector();
 
 	end = std::chrono::high_resolution_clock::now();
-	auto vectorSortingTime = end - start;
+	auto vectorSortingTime = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+	printSequence("Before ", this->_inputList);
+	// printSequence("After ", sortedList);
+	printTime("list", this->_inputList.size(), listSortingTime.count());
+	printTime("vector", this->_inputVector.size(), vectorSortingTime.count());
 }
 
 void PmergeMe::parse(int ac, char** av) {
@@ -57,14 +82,14 @@ void PmergeMe::parse(int ac, char** av) {
 	}
 }
 
+#include <thread>
+
 std::list<int> PmergeMe::sortList() {
 	std::list<int> sorted;
-
 	return (sorted);
 }
 
 std::vector<int> PmergeMe::sortVector() {
 	std::vector<int> sorted;
-
 	return (sorted);
 }
