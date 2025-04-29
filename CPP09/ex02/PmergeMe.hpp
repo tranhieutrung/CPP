@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:21 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/25 15:29:59 by hitran           ###   ########.fr       */
+/*   Updated: 2025/04/29 11:01:11 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ class PmergeMe
 		~PmergeMe();
 
 		void start();
-		void parse(char** av);
-		std::list<unsigned int> sortList();
-		std::vector<unsigned int> sortVector();
+		void parse(int ac, char** av);
+		std::list<int> sortList();
+		std::vector<int> sortVector();
 
 	private:
-		std::list<unsigned int> 	_inputList;
-		std::vector<unsigned int> 	_inputVector;
+		std::list<int> 		_inputList;
+		std::vector<int> 	_inputVector;
 
 };
