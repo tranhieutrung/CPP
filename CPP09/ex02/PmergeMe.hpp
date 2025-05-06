@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:21 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/29 11:01:11 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/06 11:52:43 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ class PmergeMe
 
 		void start();
 		void parse(int ac, char** av);
-		std::list<int> sortList();
-		std::vector<int> sortVector();
+
+		template <typename Container>
+		Container sort(Container &ctn);
 
 	private:
 		std::list<int> 		_inputList;
