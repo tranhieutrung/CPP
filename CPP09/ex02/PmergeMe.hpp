@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:21 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/07 09:51:58 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 12:24:22 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,25 @@
 # include <iostream>
 # include <algorithm>
 # include <stdexcept>
-# include <list>
+# include <deque>
 # include <vector>
+# include <list>
 # include <sstream>
 # include <limits>
+#include <chrono>
 
 #define MAXINT 4294967295
 
 class PmergeMe
 {
 	public:
-		PmergeMe();
-		PmergeMe(const PmergeMe &other);
-		PmergeMe &operator=(const PmergeMe &other);		
+		PmergeMe() = delete;
+		PmergeMe(const PmergeMe &other) = delete;
+		PmergeMe &operator=(const PmergeMe &other) = delete;		
 		~PmergeMe();
 
-		void start();
-		void parse(int ac, char** av);
-
-		template <typename Container>
-		Container sort(Container &ctn);
+		static void mergeInsertionSort(int ac, char** av);
 
 	private:
-		std::list<unsigned int> 	_inputList;
-		std::vector<unsigned int> 	_inputVector;
 
 };
