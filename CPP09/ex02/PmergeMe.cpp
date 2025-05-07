@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:12 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/06 11:52:39 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 09:52:14 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &other) {
 
 PmergeMe::~PmergeMe() {}
 
-void printSequence(std::string ms, std::list<int> list) {
+void printSequence(std::string ms, std::list<unsigned int> list) {
 	std::cout 	<< ms;
 	int iter = 0;
-	for (std::list<int>::iterator it = list.begin(); it != list.end(); ++it) {
+	for (std::list<unsigned int>::iterator it = list.begin(); it != list.end(); ++it) {
 		iter++;
 		if (iter <= 4 || list.size() == 5) {
 			std::cout << " " << *it;
@@ -50,7 +50,7 @@ void PmergeMe::start() {
 	// Sorting list
 	auto start = std::chrono::high_resolution_clock::now();
 	
-	std::list<int>sortedList = this->sort(this->_inputList);
+	std::list<unsigned int>sortedList = this->sort(this->_inputList);
 
 	auto end = std::chrono::high_resolution_clock::now();
 	auto listSortingTime = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
@@ -58,7 +58,7 @@ void PmergeMe::start() {
 	// Sorting vector
 	start = std::chrono::high_resolution_clock::now();
 	
-	std::vector<int>sortedVector = this->sort(this->_inputVector);
+	std::vector<unsigned int>sortedVector = this->sort(this->_inputVector);
 
 	end = std::chrono::high_resolution_clock::now();
 	auto vectorSortingTime = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
@@ -75,11 +75,11 @@ void PmergeMe::start() {
 }
 
 void PmergeMe::parse(int ac, char** av) {
-	size_t idx = 0;
 	for (int index = 1; index < ac; index++) {
 		std::string numStr = av[index];
-		int num = std::stoi(numStr, &idx);
-		if (num <= 0 || idx != numStr.size()) {
+		size_t idx = 0;
+		long int num = std::stol(numStr, &idx);
+		if (num <= 0 || num > MAXINT || idx != numStr.size()) {
 			throw (std::runtime_error(""));
 		}
 		this->_inputList.push_back(num);

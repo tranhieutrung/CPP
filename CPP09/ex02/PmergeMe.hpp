@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:21 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/06 11:52:43 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 09:51:58 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <list>
 # include <vector>
 # include <sstream>
+# include <limits>
+
+#define MAXINT 4294967295
 
 class PmergeMe
 {
@@ -34,7 +37,7 @@ class PmergeMe
 		Container sort(Container &ctn);
 
 	private:
-		std::list<int> 		_inputList;
-		std::vector<int> 	_inputVector;
+		std::list<unsigned int> 	_inputList;
+		std::vector<unsigned int> 	_inputVector;
 
 };
