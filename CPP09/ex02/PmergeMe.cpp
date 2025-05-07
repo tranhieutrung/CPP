@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:12 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/07 09:52:14 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 09:59:25 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,27 +87,13 @@ void PmergeMe::parse(int ac, char** av) {
 	}
 }
 
+
 template <typename Container>
-Container PmergeMe::sort(Container &ctn) {
-	Container a, b;
+void splitContainer(const Container &input, Container &a, Container &b) {
 
-	if (ctn.size() <= 1) {
-		return (ctn);
-	} else if (ctn.size() == 2) {
-		auto first = ctn.begin();
-		auto second = std::next(first);
-		if (*first <= *second) {
-			return (ctn);
-		} else {
-			a.push_back(*second);
-			a.push_back(*first);
-			return (a);
-		}
-	}
-
-	for (auto it = ctn.begin(); it != ctn.end(); ) {
+	for (auto it = input.begin(); it != input.end(); ) {
 		auto next = std::next(it);
-		if (next == ctn.end()) {
+		if (next == input.end()) {
 			b.push_back(*it);
 			break;
 		} else if (*it > *next) {
@@ -119,6 +105,27 @@ Container PmergeMe::sort(Container &ctn) {
 		}
 		std::advance(it, 2);
 	}
+}
+
+template <typename Container>
+Container PmergeMe::sort(Container &input) {
+	Container a, b;
+
+	if (input.size() <= 1) {
+		return (input);
+	} else if (input.size() == 2) {
+		auto first = input.begin();
+		auto second = std::next(first);
+		if (*first <= *second) {
+			return (input);
+		} else {
+			a.push_back(*second);
+			a.push_back(*first);
+			return (a);
+		}
+	}
+
+	splitContainer(input, a, b);
 	
 	if (a.size() > 1) {
 		a = this->sort(a);
