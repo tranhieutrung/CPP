@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:21 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/07 13:36:04 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 15:18:22 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <list>
 # include <chrono>
 
-#define MAXINT 4294967295
+#define MAXNUM 4294967295
 
 class PmergeMe
 {

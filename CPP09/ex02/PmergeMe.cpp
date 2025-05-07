@@ -6,14 +6,14 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:12 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/07 13:36:16 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 15:18:27 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
 template <typename Container>
-void merge(const Container &input, Container &a, Container &b) {
+void split(const Container &input, Container &a, Container &b) {
 	for (auto it = input.begin(); it != input.end(); ) {
 		auto next = std::next(it);
 		if (next == input.end()) {
@@ -31,7 +31,7 @@ void merge(const Container &input, Container &a, Container &b) {
 }
 
 template <typename Container>
-void insert(Container &a, Container &b) {
+void merge(Container &a, Container &b) {
 	for (auto it = b.begin(); it != b.end(); it++) {
 		auto pos = std::lower_bound(a.begin(), a.end(), *it);
 		a.insert(pos, *it);
@@ -46,40 +46,42 @@ void sort(Container &input) {
 		std::sort(input.begin(), input.end());
 	} else {
 		Container a, b;
-		merge(input, a, b);
+		split(input, a, b);
 		sort(a);
-		insert(a, b);
+		merge(a, b);
 		input = a;
 	}
+}
+
+template <typename Container>
+std::chrono::microseconds measure(Container &container, std::list<unsigned int> input) {
+	auto start = std::chrono::high_resolution_clock::now();
+
+	container.insert(container.end(), input.begin(), input.end());
+	sort(container);
+	
+	auto end = std::chrono::high_resolution_clock::now();
+	
+	if (!std::is_sorted(container.begin(), container.end())) {
+		throw (std::runtime_error(""));
+	}
+
+	return (std::chrono::duration_cast<std::chrono::microseconds>(end - start));
 }
 
 void PmergeMe::run(int ac, char** av) {
 	std::list<unsigned int> input = parse(ac, av);
 
-	// Sorting deque
-	auto start = std::chrono::high_resolution_clock::now();
 	std::deque<unsigned int> deque;
-	deque.insert(deque.end(), input.begin(), input.end());
-	sort(deque);
-	auto end = std::chrono::high_resolution_clock::now();
-	auto dequesortingTime = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-
-	// Sorting vector
-	start = std::chrono::high_resolution_clock::now();
 	std::vector<unsigned int> vector;
-	vector.insert(vector.end(), input.begin(), input.end());
-	sort(vector);
-	end = std::chrono::high_resolution_clock::now();
-	auto vectorsortingTime = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
-	if (!std::is_sorted(deque.begin(), deque.end())
-		|| !std::is_sorted(vector.begin(), vector.end())) {
-		std::cerr << "Error: Not sorted!\n";
-	}
+	std::chrono::microseconds dequeDuration = measure(deque, input);
+	std::chrono::microseconds vectorDuration = measure(vector, input);
+
 	printSequence("Before ", input);
 	printSequence("After ", deque);
-	printTime("deque", deque.size(), dequesortingTime.count());
-	printTime("vector", vector.size(), vectorsortingTime.count());
+	printTime("deque", deque.size(), dequeDuration.count());
+	printTime("vector", vector.size(), vectorDuration.count());
 }
 
 PmergeMe::~PmergeMe() {}
@@ -89,10 +91,10 @@ PmergeMe::~PmergeMe() {}
 template <typename Container>
 void printSequence(std::string ms, const Container &sequence) {
 	std::cout 	<< ms;
-	int iter = 0;
+	int index = 0;
 	for (auto it = sequence.begin(); it != sequence.end(); ++it) {
-		iter++;
-		if (iter <= 4 || sequence.size() == 5) {
+		index++;
+		if (index <= 4 || sequence.size() == 5) {
 			std::cout << " " << *it;
 		} else {
 			std::cout << " [...]";
@@ -114,7 +116,7 @@ std::list<unsigned int> parse(int ac, char** av) {
 		std::string numStr = av[index];
 		size_t idx = 0;
 		long int num = std::stol(numStr, &idx);
-		if (num <= 0 || num > MAXINT || idx != numStr.size()) {
+		if (num <= 0 || num > MAXNUM || idx != numStr.size()) {
 			throw (std::runtime_error(""));
 		}
 		res.push_back(num);
