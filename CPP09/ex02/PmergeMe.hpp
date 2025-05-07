@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:26:21 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/07 12:24:22 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 13:36:04 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@
 # include <deque>
 # include <vector>
 # include <list>
-# include <sstream>
-# include <limits>
-#include <chrono>
+# include <chrono>
 
 #define MAXINT 4294967295
 
@@ -32,8 +30,17 @@ class PmergeMe
 		PmergeMe &operator=(const PmergeMe &other) = delete;		
 		~PmergeMe();
 
-		static void mergeInsertionSort(int ac, char** av);
+		static void run(int ac, char** av);
 
 	private:
 
 };
+
+//Utils
+
+template <typename Container>
+void printSequence(std::string ms, const Container &sequence);
+
+void printTime(std::string container, size_t size, auto time);
+
+std::list<unsigned int> parse(int ac, char** av);

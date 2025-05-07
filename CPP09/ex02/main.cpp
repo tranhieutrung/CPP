@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/07 12:25:08 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/07 12:37:04 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char **av) {
 	}
 
 	try {
-		PmergeMe::mergeInsertionSort(ac, av);
+		PmergeMe::run(ac, av);
 	} catch (std::exception &) {
 		std::cerr << "Error" << std::endl;
 		return (EXIT_FAILURE);
