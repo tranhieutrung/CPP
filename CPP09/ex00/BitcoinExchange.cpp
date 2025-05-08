@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/05/08 10:47:30 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/08 11:16:42 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,11 @@ void BitcoinExchange::loadPriceMap(std::string dataPath) {
 		if (pos == std::string::npos) {
 			throw (std::runtime_error("Database: Invalid line format: " + line));
 		}
-		this->_priceMap.emplace(parseDate(line.substr(0, pos)),
-								parseNumber(line.substr(pos + 1), 1000000));
+		auto check = this->_priceMap.emplace(parseDate(line.substr(0, pos)),
+									parseNumber(line.substr(pos + 1), 1000000));
+		if (!check.second) {
+			throw (std::runtime_error("Database: Duplicated date: " + line));
+		}
 	}
 }
 
