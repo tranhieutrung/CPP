@@ -6,7 +6,7 @@
 /*   By: hitran <hitran@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:32:18 by hitran            #+#    #+#             */
-/*   Updated: 2025/04/24 22:42:47 by hitran           ###   ########.fr       */
+/*   Updated: 2025/05/08 10:47:30 by hitran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ BitcoinExchange::~BitcoinExchange() {}
 const std::string parseDate(const std::string &date) {
 	struct tm tm = {};
 	
-	if (!strptime(date.c_str(), "%Y-%m-%d", &tm)) {
+	if (date.size() != 10 || !strptime(date.c_str(), "%Y-%m-%d", &tm)) {
 		throw (std::runtime_error("bad input => " + date));
 	}
 
