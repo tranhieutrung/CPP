@@ -56,7 +56,9 @@ void	calculate(std::stack<unsigned int> &stack, char op) {
 		checkOverflow(res + tmp, stack.top());
 	} else if (op == '*') {
 		res = stack.top() * tmp;
-		checkOverflow(res / tmp, stack.top());
+		if (tmp) {
+			checkOverflow(res / tmp, stack.top());
+		}
 	} else if (op == '/' && tmp) {
 		res = stack.top() / tmp;
 		checkOverflow(res * tmp, stack.top());
