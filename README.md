@@ -41,8 +41,11 @@ This project is a structured introduction to Object-Oriented Programming (OOP) i
 - Learn to write generic function templates and use STL iterators effectively. <br>
 [**CPP08**](https://github.com/tranhieutrung/CPP/tree/main/CPP08)
 ## 📌 CPP09 - Data Structures & Algorithmic Thinking
+- Introduces STL containers and practical algorithm implementation in C++.
+- Focuses on solving real-world problems efficiently by choosing the appropriate container and structure.
+- Encourages thinking about performance, data access patterns, and container behavior. <br>
+[**CPP09**](https://github.com/tranhieutrung/CPP/tree/main/CPP09)
 
-# Conclusion
-Completing these modules will helps in gaining a solid foundation in modern C++ development, covering everything from basic syntax to advanced OOP concepts and data structures.
+
 
 🚀 Happy coding!
