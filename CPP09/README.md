@@ -1,6 +1,8 @@
 # C++ Module 09
 # Introduction
-This module introduces containers and polymorphic behavior in C++, emphasizing performance and understanding of how standard containers work internally. The goal is re-implementing simplified versions of standard containers and solving problems that involve managing data efficiently without relying solely on STL magic.
+This module introduces practical problem-solving using the C++ Standard Template Library (STL). The goal is to select the appropriate container for each task, apply efficient algorithms, and handle real-world data with performance and structure in mind.
+
+Each exercise focuses on container behavior, complexity, and how to process large data efficiently without writing low-level data structures.
 
 # Exercises
 ## Exercise 00: Bitcoin Exchange
