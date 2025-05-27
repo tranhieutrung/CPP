@@ -23,17 +23,3 @@ void Warlock::setTitle(const std::string title) {
 void Warlock::introduce() const {
 	std::cout << _name + ": I am " + _name + ", " + _title + "!\n";
 }
-
-// Private methods:
-
-Warlock::Warlock() {}
-
-Warlock::Warlock(Warlock &other): _name(other._name), _title(other._title) {}
-
-Warlock &Warlock::operator=(Warlock &other) {
-	if (this != &other) {
-		_name = other._name;
-		_title = other._title;
-	}
-	return *this;
-}
