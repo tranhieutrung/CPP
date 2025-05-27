@@ -8,7 +8,6 @@ _name(name), _title(title) {
 }
 Warlock::~Warlock() {
 	std::cout << _name + ": My job here is done!\n";
-	_book.clean();
 }
 
 const std::string &Warlock::getName() const {
@@ -43,19 +42,4 @@ void Warlock::launchSpell(const std::string &name, ATarget &target) {
 		a->launch(target);
 		delete a;
 	}
-}
-
-
-// Private methods:
-
-Warlock::Warlock() {}
-
-Warlock::Warlock(Warlock &other): _name(other._name), _title(other._title) {}
-
-Warlock &Warlock::operator=(Warlock &other) {
-	if (this != &other) {
-		_name = other._name;
-		_title = other._title;
-	}
-	return *this;
 }

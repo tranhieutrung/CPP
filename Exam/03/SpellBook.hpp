@@ -17,7 +17,6 @@ public:
 	void learnSpell(ASpell *spell);
 	void forgetSpell(const std::string &name);
 	ASpell* createSpell(const std::string &name);
-	void clean();
 
 private:
 	std::map<std::string, ASpell*> _spells;

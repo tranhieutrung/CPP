@@ -20,7 +20,7 @@ public:
 
 	void getHitBySpell(const ASpell &spell) const;
 
-private:
+protected:
 	std::string _type;
 
 };

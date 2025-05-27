@@ -8,12 +8,16 @@
 TargetGenerator::TargetGenerator() {}
 
 TargetGenerator::~TargetGenerator() {
+	for (std::map<std::string, ATarget*>::iterator it = _targets.begin(); it != _targets.end(); it++) {
+		delete it->second;
+	}
+	_targets.clear();
 }
 
 void TargetGenerator::learnTargetType(ATarget *target) {
 	if (!target)
 		return;
-	_targets.insert(std::make_pair(target->getType(), target));
+	_targets.insert(std::make_pair(target->getType(), target->clone()));
 }
 
 void TargetGenerator::forgetTargetType(std::string &type) {
@@ -25,24 +29,10 @@ void TargetGenerator::forgetTargetType(std::string &type) {
 }
 
 ATarget* TargetGenerator::createTarget(const std::string &type) {
-	if (type == "Target Practice Dummy") {
-		return new Dummy();
-	} else if (type == "Inconspicuous Red-brick Wall") {
-		return new BrickWall();
+	std::map<std::string, ATarget*>::iterator it = _targets.find(type);
+	if (it != _targets.end()) {
+		return it->second->clone();
 	} else {
 		return NULL;
 	}
-}
-
-
-// Private methods:
-
-TargetGenerator::TargetGenerator(TargetGenerator &other)
-: _targets(other._targets) {}
-
-TargetGenerator &TargetGenerator::operator=(TargetGenerator &other) {
-	if (this != &other) {
-		_targets = other._targets;
-	}
-	return *this;
 }
