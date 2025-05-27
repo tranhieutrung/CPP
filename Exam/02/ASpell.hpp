@@ -21,7 +21,7 @@ public:
 
 	void launch(const ATarget &target) const;
 
-private:
+protected:
 	std::string _name;
 	std::string _effects;
 

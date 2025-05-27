@@ -45,18 +45,3 @@ void Warlock::launchSpell(std::string name, ATarget &target) {
 		it->second->launch(target);
 	}
 }
-
-
-// Private methods:
-
-Warlock::Warlock() {}
-
-Warlock::Warlock(Warlock &other): _name(other._name), _title(other._title) {}
-
-Warlock &Warlock::operator=(Warlock &other) {
-	if (this != &other) {
-		_name = other._name;
-		_title = other._title;
-	}
-	return *this;
-}
